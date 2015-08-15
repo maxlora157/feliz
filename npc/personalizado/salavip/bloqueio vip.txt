@@ -1,0 +1,15 @@
+sec_in01,85,167,1	script	Bloqueio VIP	-1,{
+OnPCLoadMapEvent:
+    if(getgroupid() < 1)
+       warp "prontera",150,150;
+   else
+       end;
+}
+
+sec_in01	mapflag	loadevent
+sec_in01	mapflag	nomemo
+sec_in01	mapflag	noteleport
+//sec_in01	mapflag	noreturn
+//sec_in01	mapflag	nowarp
+//sec_in01	mapflag	nowarpto
+sec_in01	mapflag	nosave

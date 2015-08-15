@@ -1,0 +1,37 @@
+prontera.gat,149,188,5	script	Sala VIP	899,{
+
+	// Variáveis Sets
+	set .title$,"[Sala VIP]";
+	set .site$,"www.splendid-ro.com";	// Site do seu Servidor
+	set $@GMLevel, 1;			// Nível de Jogadores que terão acesso a Sala VIP
+	
+	// Mapa + Where X & Y
+	set $Mapa$,"sec_in01";			// Mapa da Sala VIP
+	set $x,85;				// Where X
+	set $y,167;				// Where Y
+	
+	mes "Olá "+strcharinfo(0)+", deseja ir até a Sala VIP?";
+	next;
+	if(getgroupid() >= $@GMLevel) {
+	mes "Ok vamos lá!";
+	next;
+	warp $Mapa$,$x,$y;
+	}
+
+	mes "Você não é um Jogador VIP!";
+	mes "Este NPC é apenas para Jogadores VIP";
+	mes "Adquira já o seu vip no nosso site "+.site$+"";
+	close;
+				OnInit:
+waitingroom "[ Sala VIP ]", 0;
+end;
+}
+
+// ---------- No ----------
+
+sec_in01	mapflag	nomemo
+sec_in01	mapflag	noteleport
+//sec_in01	mapflag	noreturn
+//sec_in01	mapflag	nowarp
+//sec_in01	mapflag	nowarpto
+sec_in01	mapflag	nosave

@@ -1,0 +1,23 @@
+-	script	OnPCLoginEvent	-1,{
+
+    OnPCLoginEvent:
+cutin "bat_kiyom1",2;
+    set @npcname$,"^336699[ Bem Vindo ]^000000";
+    set @servername$,"Splendid-RO";	
+    mes @npcname$;
+    mes "Olá ^0000CD"+strcharinfo(0)+"^000000, Bem-vind"+(Sex?"o":"a")+" ao ^FF0000"+ @servername$ +"^000000";
+    mes "Você possui ^FF0000"+#CASHPOINTS+"^000000 Cash";
+    mes "Não se esqueça de votar e conferir nosso forum !";
+    next;
+    mes @npcname$;
+    mes "^FF0000Site:^000000SeuSite";
+    mes "^FF0000forum:^000000SeuForum";
+    mes "^FF0000Gerenciador:^000000SuaCP";
+    next;
+    mes @npcname$;
+    mes "Tudo certo, tenha um bom jogo";
+cutin "",255;
+    close;
+
+
+}

@@ -1,0 +1,17 @@
+function	script	ticket1000	{
+set #CASHPOINTS,#CASHPOINTS+1000;
+dispbottom "Você ganhou 1000 de CASH , use no Cash Shop.";
+end;
+}
+
+function	script	ticket5000	{
+set #CASHPOINTS,#CASHPOINTS+5000;
+dispbottom "Você ganhou 5000 de CASH , use no Cash Shop.";
+end;
+}
+
+function	script	ticket10000	{
+set	#CASHPOINTS,#CASHPOINTS+10000;
+dispbottom "Você ganhou 10000 de CASH , use no Cash Shop.";
+end;
+}

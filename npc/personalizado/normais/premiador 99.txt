@@ -1,0 +1,19 @@
+-	script	anuncialvmax#hd	-1,{
+ 
+OnPCBaseLvUpEvent:
+//=====================
+    set @levelmax, 99; //Nível máximo do seu servidor
+//=====================
+    
+    if(chegou == 0) {
+    if(BaseLevel == @levelmax){
+    getitem 607,1;
+    getitem 7227,30;
+    getitem 608,1;
+    announce "O(A) Jogador(a) "+strcharinfo(0)+" alcançou o nível "+@levelmax+"! Parabéns a ele(a)!",8;
+set chegou,1;
+    end;
+    }
+
+}
+}

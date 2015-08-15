@@ -1,0 +1,50 @@
+prontera,160,187,5	script	Quest MVP's	969,{
+
+	setarray .@quest_0, 501,1,0,502,1;
+	
+	
+
+	mes "[Quest MVP's]";
+	mes "Aqui estão as quest que voce pode fazer ";
+	mes "com os itens que são adquiridos dos Mvps especiais ";
+	next;
+	mes "o MVP Drake esta com o item da quest ";
+	mes "vai la pegar se voce e capaz Marujo ";
+for(set .@i, 0; getd (".@quest_"+ .@i); set .@i, .@i + 1)
+set .@menu$, .@menu$ + "- " + getd (".@quest_"+.@i+"[1]") +"x "+ getitemname (getd (".@quest_"+.@i)) + ":";
+set .@i, select(.@menu$) - 1;
+set .@size, getarraysize (getd (".@quest_"+.@i));
+next;
+mes "Os itens que quero para essa quest são:";
+for(set .@j, 3; .@j < .@size; set .@j, .@j + 2)
+mes "- " + getd (".@quest_"+.@i+"["+(.@j+1)+"]") + "x " + getitemname(getd (".@quest_"+.@i+"["+.@j+"]"));
+if (getd (".@quest_"+.@i+"[2]"))
+mes  "- " + getd (".@quest_"+.@i+"[2]") + " Zenies";
+next;
+mes "Você tem o que quero?";
+switch (select ("Tenho sim.", "Ainda não."))
+{
+case 1:
+for (set .@j, 3; .@j < .@size; set .@j, .@j + 2)
+if(countitem (getd (".@quest_"+.@i+"["+.@j+"]")) < getd (".@quest_"+.@i+"["+(.@j+1)+"]") || Zeny < getd (".@quest_"+.@i+"[2]"))
+{
+mes "Você mentiu, volte quando tiver tudo.";
+close;
+}
+for (set .@j, 3 ; .@j<.@size ; set .@j, .@j+2) 
+delitem getd (".@quest_"+.@i+"["+.@j+"]"), getd (".@quest_"+.@i+"["+(.@j+1)+"]");
+getitem getd (".@quest_"+.@i+"[0]"), getd (".@quest_"+.@i+"[1]");
+set Zeny, Zeny - getd (".@quest_"+.@i+"[2]");
+mes "Aí está a sua recompensa.";
+close;
+
+
+case 2:
+mes "Então vá logo pegar o que falta, estou esperando";
+close;
+			
+			OnInit:
+waitingroom "Quest MVP's", 0;
+end;
+	}
+}

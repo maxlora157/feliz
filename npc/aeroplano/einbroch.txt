@@ -1,0 +1,107 @@
+//===== Cronus Script ===========================================
+//= Funcionários do Aeroporto de Einbroch
+//===== Por: ====================================================
+//= L0ne_W0lf, Muad_Dib
+//===== Descrição: ==============================================
+//= Funcionários do Aeroporto de Einbroch
+//===== Comentários Adicionais: =================================
+//= Official NPCs.
+//= Traduzido para pt-BR. [Evanio]
+//===============================================================
+
+airport,143,43,5	script	Funcionária#airport1a::airport1	4_F_01,{
+	mes "[Funcionária]";
+	mes "Bem-vindo ao";
+	mes "Aeroporto de Einbroch,";
+	mes "onde nós oferecemos vôos";
+	mes "diretos para as cidades de";
+	mes "Juno, Lighthalzen e Hugel.";
+	next;
+	if (select("Embarcar no dirigível:Cancelar") == 1) {
+		mes "[Funcionária]";
+		mes "A taxa de embarque no dirigível";
+		mes "é de 1,200 zeny, mas se você";
+		mes "tiver um Bilhete para Aeroplano,";
+		mes "a taxa não será cobrada.";
+		mes "Gostaria de embarcar no dirigível?";
+		next;
+		if (select("Sim:Não") == 1) {
+			if (countitem(7311) > 0) {
+				delitem 7311,1; //Bilhete_para_Aeroplano
+				warp "airport",148,51;
+				end;
+			}
+			if (Zeny >= 1200) {
+				set Zeny, Zeny - 1200;
+				warp "airport",148,51;
+				end;
+			}
+			mes "[Funcionária]";
+			mes "Me desculpe, mas você não";
+			mes "possui um Bilhete para";
+			mes "Aeroplano e também não possui";
+			mes "nenhum Zeny para embarcar";
+			mes "no dirigível. Lembre-se, a";
+			mes "taxa de embarque custa 1,200 zeny.";
+			close;
+		}
+	}
+	mes "[Funcionária]";
+	mes "Obrigada e";
+	mes "tenha um ótimo dia.";
+	close;
+}
+
+airport,158,43,5	duplicate(airport1)	Funcionária#airport1b	4_F_01
+airport,126,43,5	duplicate(airport1)	Funcionária#airport1c	4_F_01
+
+airport,143,49,3	script	Funcionária#airport2a::airport2	4_F_01,{
+	mes "[Funcionária]";
+	mes "Bem-vindo ao Aeroporto de Einbroch.";
+	mes "Se você estiver chegando do seu";
+	mes "vôo, deixe-me guia-lo para o";
+	mes "terminal principal. Caso contrário, porfavor embarque no dirigível que";
+	mes "partirá para Juno, Lighthalzen e Hugel.";
+	next;
+	if (select("Sair para o terminal principal.:Cancelar.") == 1) {
+		mes "[Funcionária]";
+		mes "Uma vez que você for para o terminal principal, você terá que";
+		mes "pagar a taxa novamente quando embarcar em outro dirigível.";
+		mes "Você deve sair para a cidade de Einbroch somente se";
+		mes "este for realmente seu destino.";
+		mes "Ir para o terminal principal?";
+		next;
+		if (select("Sim:Não") == 1) {
+			warp "airport",142,40;
+			end;
+		}
+	}
+	mes "[Funcionária]";
+	mes "Tudo bem, obrigado";
+	mes "por seu apoio";
+	mes "e espero que você tenha";
+	mes "um vôo agradável~";
+	close;
+}
+
+airport,126,51,3	duplicate(airport2)	Funcionária#airport2b	4_F_01
+airport,158,50,3	duplicate(airport2)	Funcionária#airport2c	4_F_01
+
+einbroch,94,267,3	script	Funcionária#ein01	4_F_02,{
+	mes "[Funcionária]";
+	mes "Bem-vindo ao";
+	mes "Aeroporto de Einbroch.";
+	mes "Porfavor use essa porta para";
+	mes "embarcar no dirigível que paira";
+	mes "sobre Juno, Lighthalzen e";
+	mes "Hugel na República de Schwaltzvalt.";
+	next;
+	mes "[Funcionária]";
+	mes "Caso contrário, se Einbroch é";
+	mes "seu destino pretendido,";
+	mes "porfavor desça as escadas";
+	mes "e peça aos Funcionários de Chegada para lhe guiar";
+	mes "ao terminal principal. Obrigado,";
+	mes "e desfrute de suas viagens.";
+	close;
+}

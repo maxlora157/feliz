@@ -1,0 +1,55 @@
+new_1-1,57,105,5 script Missão inicial 800,{
+ 
+ 
+if(completo ==1) goto COMPLETE;
+if(pegoquest ==1) goto QUESTINI;
+set @npc$,"[Missão Inicial]";
+ 
+mes  @npc$;
+mes "Olá sou o npc de missão inicial para novos players ";
+next;
+mes "deseja fazer a quest inicial ?";
+next;
+if(select("- Sim: -Não") == 2) { close;}{
+ 
+mes @npc$;
+mes "A missão é o seguinte Mate 20 Porings ";
+setquest 60311; // Id Da sua quest 
+set pegouquest,1;
+close;
+}
+QUESTINI:
+ 
+mes @npc$;
+mes "você volto";
+mes "completo a missão ?";
+if(select("-Sim:-nao") ==2) {close;}
+ 
+ 
+if(checkquest(60311,HUNTING) ==2) {
+mes @npc$;
+mes "Completo a missao parabens";
+getitem 2524,1; // Item a ganhar
+set completo,1;
+completequest 60311; 
+close;
+ 
+}
+else{
+ 
+ 
+mes @npc$;
+mes "você ainda não matou os monstros necessarios ";
+close;
+}
+ 
+COMPLETE:
+ 
+mes @npc$;
+mes "você ja fez esta quest !";
+close;
+ 
+ 
+ 
+}
+ 

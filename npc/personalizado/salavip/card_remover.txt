@@ -1,0 +1,163 @@
+//===== eAthena Script ======================================= 
+//= Card Removal NPC
+//===== By: ================================================== 
+//= TyrNemesis^
+//===== Current Version: ===================================== 
+//= 1.3a CR / 1.2 eA
+//===== Compatible With: ===================================== 
+//= eAthena SVN
+//===== Description: ========================================= 
+//= Removes cards from equipped items.
+//===== Additional Comments: ================================= 
+//= 1.0 First version. [TyrNemesis^]
+//= 1.2 Optimized and fixed getequipname menu. [Kisuka]
+//= 1.2b Traduzido para o Português. [ ??? ]
+//			Remova os // caso deseja incluír a falha no NPC
+//= 1.3 Corrigidos erros de português, semi-otimizado [Keoy]
+//= 1.3a Pequeno erro no menu corrigido [Keoy]
+//============================================================ 
+
+sec_in01,93,168,4	script	Velha Sábia#Cronus	78,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Você não é VIP, apenas usuários VIP podem utilizar esse benefício.";
+                close;
+        }
+
+	mes "[Velha Sábia]";
+	mes "Eu tenho o poder de remover cartas que já foram usadas nos seus equipamentos. Essa idéia pode ajudá-lo?";
+	next;
+	switch(select("Sim, ajudaria muito.:O que você quer em troca?:Não, obrigad"+(Sex ? "o" : "a")+"."))
+	{
+		case 1:
+			mes "[Velha Sábia]";
+			mes "Tudo bem. Qual ítem quer que eu examine para você?";
+			next;
+
+			setarray .@position$[1], "Cabeça","Corpo","Mão Esquerda","Mão Direita","Manto","Sapatos","Acessório 1","Acessório 2","Cabeça Meio","Cabeça Baixo";
+			set .@menu$,"";
+			for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+			{
+				if( getequipisequiped(.@i) )
+					set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+				set .@menu$, .@menu$ + ":";
+			}
+			set .@part,select(.@menu$);
+
+			mes "[Velha Sábia]";
+
+			if(!getequipisequiped(.@part))
+			{
+				mes "Meu jovem, equipe algo para que eu possa trabalhar. Não posso fazer nada por você assim.";
+				close;
+			}
+
+			set .@cardcount,getequipcardcnt(.@part);
+			if(!.@cardcount)
+			{
+				mes "Meu jovem, não há cartas equipadas neste ítem. Não posso trabalhar assim!";
+				close;
+			}
+
+			if ( !checkweight(1202,(.@cardcount+1)) )
+			{ 
+				mes "^3355FFAguarde um momento!";
+				mes "Eu não posso oferecer meus serviços a você pois está com excesso de peso ou itens no iventário.";
+				mes "Utilize seu armazém e volte até mim~";
+				close;
+			}
+			mes "Esse ítem tem " + .@cardcount + " cartas equipadas.";
+			mes "Para melhorar minha magia, são necessários " + (200000+(.@cardcount * 25000)) + " zeny,";
+			mes "um ^0000FFFragmento Estelar^000000, e uma ^0000FFGema Amarela^000000.";
+			next;
+			mes "[Velha Sábia]";
+			if(select("Ok estou pronto.:Não, não faça isso.") == 2)
+			{
+				mes "Muito bem, agradeço por utilizar os meus serviços!";
+				close;
+			}
+			if((Zeny < (200000+(.@cardcount * 25000))) || (countitem(1000) < 1) || (countitem(715) < 1))
+			{
+				mes "Você não tem tudo que é necessário para a minha mágica, garot"+(sex > 0 ? "o" : "a")+". Volte quando conseguí-los.";
+				close;
+			}
+//			mes "Antes de começar, Eu devo lhe avisar que, err, posso falhar. Mas se falar pode destruir suas cartas, os itens ou ambos. Eu não posso lhe devolver nada.";
+//			mes "Então me diga, o que é mais importante para você? As cartas ou o item?";
+//			next;
+//			switch(select("Mudei de idéia, obrigad"+(Sex ? "o" : "a")+".:O Item.:As Cartas."))
+//			{
+//				case 1:
+//					mes "[Velha Sábia]";
+//					mes "Muito bem. Volte quando precisar dos meus serviços.";
+//					close;
+//				case 2:
+//					set .@failtype,1;
+//					break;
+//				case 3:
+//					set .@failtype,2;
+//			}
+			mes "[Velha Sábia]";
+			mes "Muito vem, vamos começar!.";
+			set Zeny,Zeny - (200000+(.@cardcount * 25000));
+			delitem 1000,1;
+			delitem 715,1;
+
+//			// Substituir as constantes nas próximas 3 linhas com chance de falha baseado nos valores definidos em refine_db.txt
+//			// Primeiro valor = Chance de falha total (Item e Cartas são destruídos)
+//			// Segundo valor = Chance de falha parcial (Um ou outro será destruído, o jogador decide qual deseja salvar)
+//			// Terceiro valor = Chance de falha inofenciva (Apenas o seu investimento é perdido)
+//
+//			set .@failchance,rand(100);
+//			
+//			if(.@failchance < 2) {
+//				next;
+//				failedremovecards .@part,0;
+//				mes "[Velha Sábia]";
+//				mes "O processo foi uma falha total. Estou com muita pena, suas cartas e seus ítens foram destruídos.";
+//				close;
+//			}
+//
+//			if(.@failchance < 8) {
+//				if (.@failtype == 1) {
+//					next;
+//					failedremovecards .@part,1;					
+//					mes "[Velha Sábia]";
+//					mes "Eu falhei tentando remover as cartas do seu ítem, suas cartas foram destruídas durante o processo. O ítem, está em perfeito estado.";
+//					close;
+//				}
+//
+//				if (.@failtype == 2) {
+//					next;
+//					failedremovecards .@part,2;
+//					mes "[Velha Sábia]";
+//					mes "Menos mal. Eu tive sucesso em remover as cartas, só que o ítem foi destruído no processo.";
+//					close;	
+//				}
+//			}
+//
+//			if(.@failchance < 10) {
+//				next;
+//				failedremovecards .@part,3;				
+//				mes "[Velha Sábia]";
+//				mes "Eu falhei tentando remover as cartas. Sorte sua, os ítens e as cartas estão perfeitos.";
+//				close;	
+//			}
+//			next;
+
+			successremovecards .@part;
+			mes "[Velha Sábia]";
+			mes "O processo foi um grande sucesso. Tome suas cartas e seus ítens.";
+			close;			
+
+		case 2:
+			mes "[Velha Sábia]";
+			mes "Eu preciso de 200000 zeny, mais 25000 zeny para cada carta removida de seus ítens. E adicionalmente, preciso de um Fragmento Estelar e uma Gema Amarela para trabalhar com a minha mágica.";
+			close;
+
+		case 3:
+			mes "[Velha Sábia]";
+			mes "Muito bem, volte quando precisar dos meus serviços.";
+			close;
+	}
+}
+

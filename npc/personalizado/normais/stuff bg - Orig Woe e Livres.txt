@@ -1,0 +1,154 @@
+//===== Cronus Script ========================================
+//= Battleground Stuffs
+//===== Por: =================================================
+//= Holdur
+//===== Atual Versão: ========================================
+//= 1.0
+//===== Compatível com: ======================================
+//= Cronus SVN
+//===== Changelog: ===========================================
+//= 1.0 Iniciado script [Holdur]
+//============================================================
+ 
+ 
+ 
+bat_room,160,148,3	script	Battleground Stuffs	951,{
+ 
+mes "[Battleground Stuffs]";
+mes "Olá ^FF0000"+strcharinfo(0)+"^000000, cansad"+(sex > 0 ? "o" : "a")+" de gastar items";
+mes "Consumíveis nas partidas de Battleground e WOE ?";
+mes "Eu tenho uma boa notícia para você,";
+mes "eu posso vender itens consumíveis especiais,";
+mes "que podem ser usados nas partidas de Battleground na WOE e tambem usar Livres.";
+next;
+ 
+mes "[Battleground Stuffs]";
+mes "Assim você não precisará ficar usando seus";
+mes "itens consumíveis nas partidas.";
+mes "O preço aqui não é Zeny";
+mes "mas sim Emblemas.";
+next;
+ 
+mes "[Battleground Stuffs]";
+mes "Lembrando que você pode pagar com";
+mes "qualquer um dos dois emblemas.";
+next;
+mes "Escolha qual tipos de itens voce irar trocar pos Temos Tres.... Batalha Campal, Itens de Woe e Itens Livres  ";
+next;
+	switch( select("Trocar por Itens Batalha Campal","Trocar por Itens de Woe","Trocar por Itens Livres","Hmm, nada.") )
+	{
+		case 1: // Emblemas
+			mes "[Battleground Stuffs]";
+			mes "Você quer trocar ^0000FFEmblemas^000000 de suas Batalhas.";
+			mes "Por quais tipos de itens você quer trocar?";
+			next;
+ 
+switch(select("150 BG Poção Branca Compacta:90 BG Poção Azul:10 BG Garrafa de Veneno:50 BG Frasco de Fogo Grego:50 BG Frasco de Ácido:30 BG Frasco de Planta Carnívora:30 BG Frasco de Esfera Marinha:150 BG Mastela:150 BG Morango:50 BG Frasco de Revestimento:70 BG Gema Amarela:50 BG Gema Vermelha:100 BG Gema Azul:20 BG Poção do Vento:20 BG Teia de Aranha:10 BG Conversor Elemental Fogo:10 BG Conversor Elemental Agua:10 BG Conversor Elemental Terra:10 BG Conversor Elemental Vento:50 BG Poção do Despertar:30 BG Poção da Fúria Selvagem:3 BG Salada de Frutas:3 BG Chá de Ervas e Mel:3 BG Bife Bombástico:3 BG Sopa de Ostra:3 BG Queijo Gratinado com Tentáculos:3 BG Batata-Doce Frita"))
+
+{
+case 1: callsub S_Buy,20000,150,5; // BG Poção Branca Compacta
+case 2: callsub S_Buy,20001,90,5; // BG Poção Azul
+case 3: callsub S_Buy,20002,10,5; // BG Garrafa de Veneno
+case 4: callsub S_Buy,20003,50,5; // BG Frasco de Fogo Grego
+case 5: callsub S_Buy,20004,50,5; // BG Frasco de Ácido
+case 6: callsub S_Buy,20005,30,5; // BG Frasco de Planta Carnívora
+case 7: callsub S_Buy,20006,30,5; // BG Frasco de Esfera Marinha
+case 8: callsub S_Buy,20007,150,5; // BG Mastela
+case 9: callsub S_Buy,20008,150,5; // BG Morango
+case 10: callsub S_Buy,20009,50,5; // BG Frasco de Revestimento
+case 11: callsub S_Buy,20010,70,5; // BG Gema Amarela
+case 12: callsub S_Buy,20011,50,5; // BG Gema Vermelha
+case 13: callsub S_Buy,20012,100,5; // BG Gema Azul
+case 14: callsub S_Buy,20013,20,5; // BG Poção do Vento
+case 15: callsub S_Buy,20014,20,5; // BG Teia de Aranha
+case 16: callsub S_Buy,20015,10,5; // BG Conversor Elemental Fogo
+case 17: callsub S_Buy,20016,10,5; // BG Conversor Elemental Agua
+case 18: callsub S_Buy,20017,10,5; // BG Conversor Elemental Terra
+case 19: callsub S_Buy,20018,10,5; // BG Conversor Elemental Vento
+case 20: callsub S_Buy,20024,50,5; // BG Poção do Despertar
+case 21: callsub S_Buy,20025,30,5; // BG Poção da Fúria Selvagem
+case 22: callsub S_Buy,20026,3,5; // BG Salada de Frutas
+case 23: callsub S_Buy,20027,3,5; // BG Chá de Ervas e Mel
+case 24: callsub S_Buy,20028,3,5; // BG Bife Bombástico
+case 25: callsub S_Buy,20029,3,5; // BG Sopa de Ostra
+case 26: callsub S_Buy,20030,3,5; // BG Queijo Gratinado com Tentáculos
+case 27: callsub S_Buy,20031,3,5; // BG Batata-Doce Frita
+			}
+			
+			break;
+		case 2: // Emblemas
+			mes "[Battleground Stuffs]";
+			mes "Você quer trocar ^0000FFEmblemas^000000 de suas Batalhas.";
+			mes "Por quais tipos de itens você quer trocar?";
+			next;
+ 
+switch(select("150 Poção Branca Compacta:90 Poção Azul:100 Encantar Com Veneno Mortal:100 Bombas Ácidas:5 Poção do Vento:3 Cozido Imortal:3 Escorpiões do Deserto no Vapor:3 Tônico de Hwergelmir:3 Nove Caudas Cozidas:3 Língua no Vapor:3 Coquetel Sopro do Dragão"))
+
+{
+case 1: callsub S_Buy,20050,150,3; // Poção Branca Compacta
+case 2: callsub S_Buy,20051,90,3; // Poção Azul
+case 3: callsub S_Buy,20052,100,12; // Encantar Com Veneno Mortal
+case 4: callsub S_Buy,20054,100,12; // Bombas Ácidas
+case 5: callsub S_Buy,20056,5,1; // Poção do Vento
+case 6: callsub S_Buy,20058,3,10; // Cozido Imortal
+case 7: callsub S_Buy,20059,3,10; // Escorpiões do Deserto no Vapor
+case 8: callsub S_Buy,20060,3,10; // Tônico de Hwergelmir
+case 9: callsub S_Buy,20061,3,10; // Nove Caudas Cozidas
+case 10: callsub S_Buy,20062,3,10; // Língua no Vapor
+case 11: callsub S_Buy,20063,3,10; // Coquetel Sopro do Dragão
+}
+
+			break;
+		case 3: // Emblemas
+			mes "[Battleground Stuffs]";
+			mes "Você quer trocar ^0000FFEmblemas e Valor^000000 de suas Batalhas.";
+			mes "Por quais tipos de itens você quer trocar?";
+			next;
+ 
+switch(select("150 Poção Branca Compacta:90 Poção Azul:100 Encantar Com Veneno Mortal:100 Bombas Ácidas:5 Poção do Vento:3 Cozido Imortal:3 Escorpiões do Deserto no Vapor:3 Tônico de Hwergelmir:3 Nove Caudas Cozidas:3 Língua no Vapor:3 Coquetel Sopro do Dragão"))
+
+{
+case 1: callsub S_Buy,20050,150,3; // Poção Branca Compacta
+case 2: callsub S_Buy,20051,90,3; // Poção Azul
+case 3: callsub S_Buy,20052,100,12; // Encantar Com Veneno Mortal
+case 4: callsub S_Buy,20054,100,12; // Bombas Ácidas
+case 5: callsub S_Buy,20056,5,1; // Poção do Vento
+case 6: callsub S_Buy,20058,3,10; // Cozido Imortal
+case 7: callsub S_Buy,20059,3,10; // Escorpiões do Deserto no Vapor
+case 8: callsub S_Buy,20060,3,10; // Tônico de Hwergelmir
+case 9: callsub S_Buy,20061,3,10; // Nove Caudas Cozidas
+case 10: callsub S_Buy,20062,3,10; // Língua no Vapor
+case 11: callsub S_Buy,20063,3,10; // Coquetel Sopro do Dragão
+}
+		case 4:
+			mes "[Battleground Stuffs]";
+			mes "Temos muitos itens; fique à vontade para olhar antes de comprar.";
+			close2;
+			end;
+S_Buy:
+//getarg(0) = item_id      //AQUI É O ERRO ONDE O EMULADOR DIZ QUE É
+//getarg(1) = Quantidade de item_id que você obtenha
+mes "[Battleground Stuffs]";
+mes "Então você quer ^0000FF"+getarg(1)+" "+getitemname(getarg(0))+"s^000000...";
+mes "Vai custar-lhe ^FF0000"+getarg(2)+" Emblemas...";
+next;
+select("Emblema de Bravura:Emblema de Valor");
+setarray .@medalid, 7828, 7829;
+if(countitem(.@medalid[@menu-1]) >= getarg(2)) {
+delitem .@medalid[@menu-1],getarg(2);
+getitem getarg(0),getarg(1);
+next;
+mes "[Battleground Stuffs]";
+mes "Troca concluída, obrigado e volte sempre.";
+close;
+}
+else
+{
+mes "[Battleground Stuffs]";
+mes "Me desculpe mas você não tem a ";
+mes "quantidade necessária desse Emblema.";
+close;
+}
+return;
+}
+}

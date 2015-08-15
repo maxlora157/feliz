@@ -1,0 +1,17 @@
+-	shop	topo2	1,643:3000,7767:1000,7822:1000,7823:1000,6110:1000,6100:1000,7821:1000,7824:1000,6115:1000,6095:1000,6096:1000,6106:1000,6111:1000,6112:1000,6105:1000,6109:1000,6097:1000,6108:1000,6107:1000,6114:1000,6104:1000,6113:1000,6098:1000
+
+sec_in01,93,165,4	script	Pet Shop VIP	72,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+mes "Ola ^FF0000"+strcharinfo(0)+"^000000,";
+mes "Deseja visitar a Pet Shop VIP ?";
+switch(select("- Comprar")){
+case 1:
+close2;
+callshop "topo2";
+end;
+}
+}

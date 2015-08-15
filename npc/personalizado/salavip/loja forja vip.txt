@@ -1,0 +1,18 @@
+-	shop	topo1	1,612:190,613:1250,614:3750,615:6250
+
+sec_in01,82,160,4	script	Loja de Forja	63,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+mes "Ola ^FF0000"+strcharinfo(0)+"^000000,";
+mes "Deseja visitar a Loja de Forja ?";
+switch(select("- Comprar")){
+case 1:
+close2;
+callshop "topo1";
+end;
+}
+}
+

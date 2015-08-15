@@ -1,0 +1,74 @@
+-	script	Mestra das Habilidades	-1,{
+
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Você não é VIP, apenas usuários VIP podem utilizar esse benefício.";
+                close;
+        }
+
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+set @vip$,"[ ^FF0000 Mestra das Habilidades ^000000 ]";
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+mes @vip$;
+mes "Olá ^CD3333"+strcharinfo(0)+"^000000!";
+mes "Diga-me o que deseja.";
+next;
+menu "- Habilidades de Platina",L_a,"- Cancelar",L_exit2;
+
+
+L_a:
+mes @vip$;
+mes "Eu posso dar-lhe habilidades extras que estão disponíveis para sua classe.";
+mes "Deseja receber suas habilidades extras agora?";
+next;
+if (select("Sim, Por favor:Não, Obrigado") == 2) {
+	mes "[Habilidades Extras]";
+	mes "Tenha um bom dia... >.>";
+	close;
+}
+skill 142,1,0;
+
+switch(BaseClass) {
+	case 0: if (Class !=23) skill 143,1,0; break;
+	case 1: skill 144,1,0; skill 145,1,0; skill 146,1,0; break;
+	case 2: skill 157,1,0; break;
+	case 3: skill 147,1,0; skill 148,1,0; break;
+	case 4: skill 156,1,0; break;
+	case 5: skill 153,1,0; skill 154,1,0; skill 155,1,0; break;
+	case 6: skill 149,1,0; skill 150,1,0; skill 151,1,0; skill 152,1,0; break;
+	default: break;
+}
+
+switch(BaseJob) {
+	case 7: skill 1001,1,0; break;
+	case 8: skill 1014,1,0; break;
+	case 9: skill 1006,1,0; break;
+	case 10: skill 1012,1,0; skill 1013,1,0; break;
+	case 11: skill 1009,1,0; break;
+	case 12: skill 1003,1,0; skill 1004,1,0; break;
+	case 14: skill 1002,1,0; break;
+	case 15: skill 1015,1,0; skill 1016,1,0; break;
+	case 16: skill 1007,1,0; skill 1008,1,0; skill 1017,1,0; skill 1018,1,0; skill 1019,1,0; break;
+	case 17: skill 1005,1,0; break;
+	case 18: skill 238,1,0; break;
+	case 19: skill 1010,1,0; break;
+	case 20: skill 1011,1,0; break;
+	default: break;
+}
+mes @vip$;
+mes "Pronto, você já recebeu suas habilidades extra.";
+close;
+
+
+L_exit2:
+close;
+end;
+}
+
+
+sec_in01,93,160,3	duplicate(Mestra das Habilidades)	Mestra das Habilidades#alb	101

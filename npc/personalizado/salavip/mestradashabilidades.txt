@@ -1,0 +1,127 @@
+sec_in01,76,168,4	script	Mestra das Habilidades	792,{
+
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+set @vip$,"[ ^FF0000 Mestra das Habilidades ^000000 ]";
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+mes @vip$;
+mes "Olá ^CD3333"+strcharinfo(0)+"^000000!";
+mes "Diga-me o que deseja.";
+next;
+menu "- Habilidades de Platina",L_a,"- Garota Negociante",L_b,"- Removedor de Habilidades",L_c,"- Cancelar",L_exit2;
+
+L_a:
+mes @vip$;
+	mes "Eu posso dar-lhe habilidades extras que estão disponíveis para sua classe.";
+	mes "Deseja receber suas habilidades extras agora?";
+	next;
+	if (select("Sim, Por favor:Não, Obrigado") == 2) {
+		mes "[Habilidades Extras]";
+		mes "Tenha um bom dia... >.>";
+		close;
+	}
+	skill 142,1,0;
+	switch(BaseClass) {
+		case 0: if (Class !=23) skill 143,1,0; break;
+		case 1: skill 144,1,0; skill 145,1,0; skill 146,1,0; break;
+		case 2: skill 157,1,0; break;
+		case 3: skill 147,1,0; skill 148,1,0; break;
+		case 4: skill 156,1,0; break;
+		case 5: skill 153,1,0; skill 154,1,0; skill 155,1,0; break;
+		case 6: skill 149,1,0; skill 150,1,0; skill 151,1,0; skill 152,1,0; break;
+		default: break;
+	}
+	switch(BaseJob) {
+		case 7: skill 1001,1,0; break;
+		case 8: skill 1014,1,0; break;
+		case 9: skill 1006,1,0; break;
+		case 10: skill 1012,1,0; skill 1013,1,0; break;
+		case 11: skill 1009,1,0; break;
+		case 12: skill 1003,1,0; skill 1004,1,0; break;
+		case 14: skill 1002,1,0; break;
+		case 15: skill 1015,1,0; skill 1016,1,0; break;
+		case 16: skill 1007,1,0; skill 1008,1,0; skill 1017,1,0; skill 1018,1,0; skill 1019,1,0; break;
+		case 17: skill 1005,1,0; break;
+		case 18: skill 238,1,0; break;
+		case 19: skill 1010,1,0; break;
+		case 20: skill 1011,1,0; break;
+		default: break;
+	}
+mes @vip$;
+	mes "Pronto, você já recebeu suas habilidades extra.";
+close;
+
+L_b:
+mes @vip$;
+	if (ismounting()) {
+		message strcharinfo(0),"Remova sua montaria, primeiramente.";
+		end; }
+	else if ((eaclass()&EAJ_THIRDMASK==EAJ_RANGER) && !countitem(6124)) {
+		if (!checkfalcon() && getskilllv("HT_FALCON") && !checkoption(Option_Wug) && !checkoption(Option_Wugrider)) {
+			if(select(" ~ Falcon: ~ Warg")==1) setfalcon;
+			else getitem 6124,1; }
+		else getitem 6124,1; }
+	else if ((eaclass()&EAJ_THIRDMASK==EAJ_MECHANIC) && !checkcart() && getskilllv("MC_PUSHCART")) {
+		if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) {
+			if(select(" ~ Cart: ~ Mado")==1) setcart;
+			else setmadogear; }
+		else setcart; }
+	else if (!checkcart() && getskilllv("MC_PUSHCART")) setcart;
+	else if (!checkfalcon() && getskilllv("HT_FALCON") && !checkoption(Option_Wug) && !checkoption(Option_Wugrider)) setfalcon;
+	else if (!checkriding() && getskilllv("KN_RIDING")) {
+		if (eaclass()&EAJ_THIRDMASK==EAJ_RUNE_KNIGHT) setdragon;
+		else setriding; }
+	else if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) setmadogear;
+	else {
+		message strcharinfo(0),"Você não atende os requisitos necessários para o aluguel.";
+		close; }
+	specialeffect2 EF_TEIHIT3;
+close;
+
+L_c:
+mes @vip$;
+        mes "Posso remover seus pontos de habilidades que estão sobrando. O que acha disso?";
+        next;
+        if(select("Me ajudaria muito!:Não acho nada interessante...") == 2) close;
+        next;
+        mes @npc$;
+        if(SkillPoint < 1)
+        {
+                mes "Você não possui pontos de habilidades sobrando.";
+                close;
+        }
+        mes "Como você deseja remove-los?";
+        switch(select("Remover todos de uma vez.:Remover certa quantidade.:Cancelar."))
+        {
+                next;
+                mes @npc$;
+ 
+                case 1:
+                mes "Pontos removidos.";
+                set SkillPoint,SkillPoint - SkillPoint;
+                close;
+ 
+                case 2:
+                mes "Digite quantos pontos você gostaria de remover.";
+                input @skillpoint_qnt;
+                next;
+                mes @npc$;
+                mes "Pontos removidos.";
+                set SkillPoint,SkillPoint - @skillpoint_qnt;
+                close;
+ 
+                case 3:
+                mes "Estarei aqui caso precisar.";
+close;
+
+L_exit2:
+close;
+end;
+}
+}

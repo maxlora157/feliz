@@ -1,0 +1,157 @@
+//################################################################
+//######### Versão 1.0 --Novo ####################################
+//###Todos os direitos reservados - Cronus Emulator###############
+//#####Desenvolvido por: Odiney Kudelski Michalzeszen#############
+//########Em caso de modificaões contactar 'mclzeszen' no cronus##
+//######NPC Name: Maquina de brinquedos###########################
+//################################################################
+
+
+
+prontera,145,185,5	script	Maquina de Brinquedos	562,{
+
+
+///Abaixo no array is ids dos itens contidos na maquina
+setarray @Toys[0],5429,5557,5555,5098,5526,5141,5135,5253,5283,5660,7212,7268,750,742,743,754,751,740;
+set .npc$,"[^00cc00MAQUINA DE BRINQUEDOS^000000]";
+set @chance,10; 				//Chance de pegar o premio   em '%' <-  recomendavel abaixo de 50%
+set @chance_chute,@chance*2; 	// Se der um chute na maquina a chance dobra, Ex: Se a chance for 50%, qndo chutar ele pega o premio pois chega a 100%
+set @chute,1000000; 			//Valore descontado no chute: Para manutenção da maquina <- pode quebrar ^,.^
+
+RETURN_3:
+mes .npc$;
+mes "O que quer fazer?";
+next;
+switch(select("VER ITENS DA MAQUNA:TENTAR A SORTE:SOBRE:SAIR")){
+case 1:
+	mes .npc$;
+	for(set @i,0;@i < getarraysize(@Toys);set @i,@i+1){
+	mes @i+"- ^0000cc"+getitemname(@Toys[@i])+"^000000";
+	}
+	next;
+	goto RETURN_3;
+	
+	
+	
+case 2:
+	if(countitem(7505) < 1) goto L_CARDN;
+	delitem 7505,1;
+	mes .npc$;
+	mes "Cada numero na tela representa um lugar na maquina, e cada um é um brinquedo diferente.";
+	mes "Mais não significa que você vai pegar algum, por mais que acerte o lugar de um brinquedo. Tem chance de 30% de pegar.";
+	next;
+	RETURN_2:
+	mes "^00ccffEscolha um número!^000000";
+	mes "|^ff0000#1^000000|^ff0000#2^000000|^ff0000#3^000000|^ff0000#4^000000|^ff0000#5^000000|^ff0000#6^000000|";
+	mes "|^ff0000#7^000000|^ff0000#8^000000|^ff0000#9^000000|^ff000010^000000|^ff000011^000000|^ff000012^000000|";
+	mes "|^ff000013^000000|^ff000014^000000|^ff000015^000000|^ff000016^000000|^ff000017^000000|^ff000018^000000|";
+	mes "|^ff000019^000000|^ff000020^000000|^ff000021^000000|^ff000022^000000|^ff000023^000000|^ff000024^000000|";
+	mes "|^ff000025^000000|^ff000026^000000|^ff000027^000000|^ff000028^000000|^ff000029^000000|^ff000030^000000|";
+	mes "|^ff000031^000000|^ff000032^000000|^ff000033^000000|^ff000034^000000|^ff000035^000000|^ff000036^000000|";
+
+	input @num;
+	next;
+	
+	if((@num < 1) || (@num > 36)){
+	mes "Número digitado inválido!";
+	next;
+	goto RETURN_2;
+	}
+	
+	
+	///Calcula chances
+	set .c1_k,rand(1,100);
+	if(.c1_k <= @chance) set .c1,1;
+	if(.c1_k <= @chance_chute) set .c2,1;
+	///Fim calcula chances
+
+	//Array seleciona randomicamente os itens da maquina
+	setarray @premios[0],rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys)),rand(1,getarraysize(@Toys));
+	
+	mes .npc$;
+	for(set @a,1;@a < getarraysize(@premios);set @a,@a+1){
+		if((@a == @num) && (.c1 == 1)){
+		mes @a+"."+getitemname(@Toys[@premios[@num]])	+" -> ^00ff00 PEGOU O ESTE^000000";
+		}else{
+		mes @a+"."+getitemname(@Toys[@premios[@a]])	+" -> ^ff0000 FALHOU^000000";	
+			
+		}
+	
+	}
+		next;
+	 ///Fim lista itens
+	
+				if(.c1 == 1){ //Se ganhar
+					mes .npc$;
+					mes "^00ff00Parabéns!^000000";
+					getitem @Toys[@premios[@num]],1;
+					set .c1,0;
+					set .c2,0;
+					
+					close;
+				}else{ //Se não ganhar
+						if(select("Chutar a maquina!!!!","Sair") == 2) close; //Se não chutar
+					if(Zeny < @chute){ //Se chutar, sem zeny
+						mes .npc$;
+						mes "Desculpe. Você não tem Zenys o suficiente para pagar o conserto da maquina!!!";
+						close;
+					} //Fim se chute sem zeny
+							set Zeny,Zeny-@chute;
+							if(.c2 == 1){ //Se chutar e ganhar
+								mes .npc$;
+								mes "^00ff00Quebrou a maqina!!!^000000";
+								mes "Pelo menos conseguiu o que queria";
+								getitem @Toys[@premios[@num]],1;
+								set .c1,0;
+								set .c2,0;
+								close;
+							}else{ //Se chatar e não ganhar
+
+									mes .npc$;
+									mes "Bem feito. Quebrou a maquina, teve que pagar e não ganhou nada!!!";
+									close;
+								
+							}//fim se chutar
+			
+		
+		
+					
+		
+
+		
+			} //fim se não ganhar	
+		
+		
+case 3:
+		mes .npc$;
+		mes "Aqui estão vários brinquedos, chapéus, bonecos e bonecas.";
+		mes "Onde você tem a chance de catar um deles.";
+		mes "Você tem uma chance de ^ff0000"+@chance+"%^000000 de pegar um deles.";
+		mes "E pode dar um chute na maquina caso o brinquedo não venha.";
+		mes "Se opinar em chutar vai ser descontado uma quantida de ^ff0000"+@chute+"^000000 do seu bolso, para manutenção da maquina, que poderá quebrar";
+		mes "Caso chute as suas chances dobram e terá uma chance de ^ff0000"+@chance_chute+"%^000000 de pegar o item";
+		mes "Tudo depende da sua sorte.";
+		mes "Para usar a maquina você precisa de 1 ^00cc00"+getitemname(7505)+"^000000";
+		mes ".................";
+		mes "Boa sorte!";
+		next;
+		goto RETURN_3;
+	
+case 4:
+		close;
+
+
+
+
+
+
+}
+
+L_CARDN:
+	mes .npc$;
+	mes "Você precisa do cartão para usar a maquina!";
+	close;
+				OnInit:
+waitingroom "[ Brinquedos ]", 0;
+end;
+}

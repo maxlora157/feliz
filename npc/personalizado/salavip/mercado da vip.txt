@@ -1,0 +1,18 @@
+-	shop	topo	1,522:8500,578:950,717:600,611:40,1750:1,501:50,502:200,503:550,504:1200,506:40,525:500,601:60,602:300,1065:100,2239:10000,645:800,656:1500,657:3000,1751:3,1752:3,610:4000,7433:4000,1093:10,1092:3,7134:8,1771:50
+
+sec_in01,79,178,4	script	Loja de Utilidades	53,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+mes "Ola ^FF0000"+strcharinfo(0)+"^000000,";
+mes "Deseja visitar a Loja de Utilidades ?";
+switch(select("- Comprar")){
+case 1:
+close2;
+callshop "topo";
+end;
+}
+}
+

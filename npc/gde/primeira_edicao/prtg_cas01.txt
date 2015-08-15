@@ -1,0 +1,134 @@
+//===== Cronus Script ========================================
+//= Guerra do Emperium (Prontera)
+//===== Por: =================================================
+//= L0ne_W0lf
+//===== Versão Atual: ========================================
+//= 1.5
+//===== Compatível Com: ======================================
+//= Cronus GIT;
+//===== Descrição: ===========================================
+//= NPCs referentes ao 1º Castelo de Prontera
+//===== Comentários Adicionais: ==============================
+//= 1.5 Adicionado diálogos Oficiais do bRO. [Axl]
+//============================================================
+
+// Guild Flags (Outside Castle)
+//============================================================
+-	script	Kriemhild#1::OutsideFlagsPR1	GUILD_FLAG,{
+
+	set .@GID, GetCastleData("prtg_cas01",1);
+
+	if (.@GID == 0) {
+		mes " [Decreto do Reino de Rune Midgard]";
+		mes " ";
+		mes "1. Conforme o Pacto do Reino de Rune Midgard";
+		mes "e o Feudo das Valquírias,";
+		mes "declaro que este Castelo não possui um Senhor.";
+		mes " ";
+		mes "2. Ao Clã que for bravo o bastante";
+		mes "e, superarando os terríveis desafios,";
+		mes "quebrar o Emperium,";
+		mes "será dada a posse deste Castelo";
+		mes "apoiado pelo nosso Rei.";
+		close;
+	}
+	if (getcharid(2) == .@GID) {
+			mes "[ Voz Ecoante ]";
+			mes "Bravo guerreiro......";
+			mes "Deseja retornar ao seu lugar de glória?";
+			next;
+			if (select("Sim.:Não.") == 1) {
+			close2;
+			if (getcharid(2) == GetCastleData("prtg_cas01",1)) {
+				warp "prtg_cas01",96,173;
+				end;
+			}
+			end;
+		}
+		close;
+	}
+	mes "[Decreto do Reino de Rune Midgard]";
+	mes " ";
+	mes "1. Conforme o Pacto do Reino de Rune Midgard";
+	mes "e o Feudo das Valquírias,";
+	mes "declaro que este castelo pertence ao Clã ^ff0000" + GetGuildName(.@GID) + "^000000 .";
+	mes " ";
+	mes "2. O Líder do Clã ^ff0000"+ GetGuildName(.@GID) + "^000000 se chama";
+	mes "^FF0000" + GetGuildMaster(.@GID) + "^000000";
+	mes "Se alguém se opõe a este decreto";
+	mes "desembainhe sua espada para fazer valer sua vontade.";
+	close;
+
+OnRecvCastlePt01:
+	FlagEmblem GetCastleData("prtg_cas01",1);
+	end;
+}
+
+prt_gld,131,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#1-2	GUILD_FLAG
+prt_gld,138,68,6	duplicate(OutsideFlagsPR1)	Kriemhild#2	GUILD_FLAG
+prt_gld,138,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#3	GUILD_FLAG
+prt_gld,135,60,6	duplicate(OutsideFlagsPR1)	Kriemhild#4	GUILD_FLAG
+
+// Guild Flags (Inside Castle)
+//============================================================
+-	script	Kriemhild#5::InsideFlagsPR1	GUILD_FLAG,{
+	end;
+
+OnRecvCastlePt01:
+	FlagEmblem GetCastleData("prtg_cas01",1);
+	end;
+}
+
+prtg_cas01,58,56,4	duplicate(InsideFlagsPR1)	Kriemhild#5-2	GUILD_FLAG
+prtg_cas01,64,56,4	duplicate(InsideFlagsPR1)	Kriemhild#6	GUILD_FLAG
+prtg_cas01,76,32,4	duplicate(InsideFlagsPR1)	Kriemhild#7	GUILD_FLAG
+prtg_cas01,84,32,4	duplicate(InsideFlagsPR1)	Kriemhild#8	GUILD_FLAG
+prtg_cas01,94,39,4	duplicate(InsideFlagsPR1)	Kriemhild#9	GUILD_FLAG
+prtg_cas01,94,24,4	duplicate(InsideFlagsPR1)	Kriemhild#10	GUILD_FLAG
+prtg_cas01,73,14,4	duplicate(InsideFlagsPR1)	Kriemhild#11	GUILD_FLAG
+prtg_cas01,73,6,4	duplicate(InsideFlagsPR1)	Kriemhild#12	GUILD_FLAG
+prtg_cas01,55,46,4	duplicate(InsideFlagsPR1)	Kriemhild#13	GUILD_FLAG
+prtg_cas01,45,46,4	duplicate(InsideFlagsPR1)	Kriemhild#14	GUILD_FLAG
+
+// Guild Flag (Town)
+//============================================================
+prontera,156,196,4	duplicate(InsideFlagsPR1)	Kriemhild#15	GUILD_FLAG
+
+// Kafra Employee
+//============================================================
+prtg_cas01,96,173,0	duplicate(guildkafra)	Kafra Staff#prtg_cas01	4_F_KAFRA1
+
+// Steward
+//============================================================
+prtg_cas01,112,181,0	duplicate(cm)	Ahvray#prtg_cas01	1_M_JOBTESTER
+
+// Treasure Room Exit
+//============================================================
+prtg_cas01,15,208,0	script	#Lever_PR01	HIDDEN_NPC,{
+
+	mes " ";
+	mes "Há uma pequena alavanca, você deseja acioná-la?";
+	next;
+	if(select("Acionar.:Não acionar.") == 1) {
+		close2;
+		warp "prtg_cas01",112,183;
+		end;
+	}
+	close;
+}
+
+// Guild Dungeon Switch
+//============================================================
+prtg_cas01,94,200,0	duplicate(gdlever)	#prtg_cas01	HIDDEN_NPC
+
+// Guild Treasure Spawns
+//============================================================
+prtg_cas01,11,208,0	duplicate(Gld_Trea_Spawn)	Treasure#prtg_cas01	-1
+
+// AGIT Manager
+//============================================================
+prtg_cas01,197,197,0	duplicate(Gld_Agit_Manager)	Agit#prtg_cas01	-1
+
+// Guardians
+//============================================================
+prtg_cas01,112,181,0	duplicate(Gld_Guard_Template)	Guardian#prtg_cas01	-1

@@ -1,0 +1,56 @@
+//===== Cronus Script ================================================= 
+//= Garota Negociante
+//===== Por: ==========================================================
+//= Mehah
+//===== Versão Atual: ================================================= 
+//= 1.1
+//===== Descrição: ==================================================== 
+//= Dá gratuitamente Falcões, PecoPecos e Carrinhos
+//=====================================================================
+
+sec_in01,78,166,5	script	Garota Negociante	90,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Você não é VIP, apenas usuários VIP podem utilizar esse benefício.";
+                close;
+        }
+	mes "[Garota Negociante]";
+	mes "Olá, aqui você pode pegar Carrinhos, Falcões ou Pecopecos depedendo da sua vocação.";
+	next;	
+	if(BaseClass == Job_Merchant || Class == Job_SuperNovice) set @menu,select("Pegar Carrinho","Sair"); else
+	if(BaseJob != Job_Archer && BaseClass == Job_Archer) set @menu,select("Pegar falcão","Sair"); else
+	if(BaseJob != Job_Swordman && BaseClass == Job_Swordman) set @menu,select("Pegar Pecopeco","Sair"); else
+	set @menu,3;
+	switch(@menu){
+		case 1:
+			if((BaseClass == Job_Merchant || Class == Job_SuperNovice) && !checkcart() && getskilllv(39))
+				setcart;
+			else
+			if(BaseClass == Job_Archer && !checkfalcon() && getskilllv(127))
+				setfalcon;
+			else
+			if(BaseClass == Job_Swordman && !checkriding() && getskilllv(63))
+				setriding;
+			else{
+				mes "[Garota Negociante]";
+				if(checkcart()) mes "Você já possui Carrinho."; else
+				if(checkfalcon()) mes "Você já possui Falcon."; else
+				if(checkriding()) mes "Você já possui PecoPeco."; else
+				mes "Desculpe, você não possui a habilidade requerida.";
+				close;
+			}
+			mes "[Garota Negociante]";
+			mes "Volte quando necessitar novamente dos meus serviços.";
+			close;
+			
+		case 2:
+			mes "[Garota Negociante]";
+			mes "Por favor, quando estiver pronto fale comigo novamente.";
+			close;
+			
+		case 3:
+			mes "[Garota Negociante]";
+			mes "Desculpe, mas eu não posso ajuda-lo.";
+			close;
+	}
+}

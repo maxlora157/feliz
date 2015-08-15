@@ -1,0 +1,50 @@
+//===== Cronus Script ===========================================
+//= NPCs do Aeroporto de Izlude
+//===== Por: ====================================================
+//= Hercules Dev Team
+//===== Descrição: ==============================================
+//= NPCs do Aeroporto de Izlude
+//===== Comentários Adicionais: =================================
+//= Official NPCs.
+//= Traduzido para pt-BR. [Evanio]
+//===============================================================
+
+-	script	::Airship_Staff_izlude	-1,{
+	mes "[Funcionário]";
+	mes "Bem-vindo! Gostaria";
+	mes "de embarcar no dirigível que";
+	mes "saíra em vôo com destinos à";
+	mes "Juno e Rachel?";
+	next;
+	if (select("Embarcar no dirigível para Juno/Rachel.:Cancelar.") == 1) {
+		mes "[Funcionário]";
+		mes "A taxa de embarque é de";
+		mes "1,200 zeny. No entanto, esta";
+		mes "taxa é dispensada se você possuir";
+		mes "o Bilhete para Aeroplano.";
+		mes "Então, gostaria de embarcar?";
+		next;
+		if (select("Sim:Não") == 1) {
+			if (countitem(7311) > 0) {
+				delitem 7311,1; //Bilhete_para_Aeroplano
+				warp "airplane_01",244,58;
+				end;
+			}
+			if (Zeny >= 1200) {
+				set Zeny, Zeny - 1200;
+				warp "airplane_01",244,58;
+				end;
+			}
+			mes "[Funcionário]";
+			mes "Sinto muito, mas você não";
+			mes "possui 1,200 zeny para pagar";
+			mes "a taxa de embarque.";
+			close;
+		}
+	}
+	mes "[Funcionário]";
+	mes "Obrigado e pofavor";
+	mes "volte sempre.";
+	mes "Tenha um ótimo dia~";
+	close;
+}

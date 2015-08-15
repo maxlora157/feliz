@@ -1,0 +1,75 @@
+	
+
+    //===== Cronus Script ========================================
+    //= Estilista
+    //===== Por: =================================================
+    //= Rafael
+    //===== Versão Atual: ========================================
+    //= 1.1a CR
+    //===== Descrição: ===========================================
+    //= Tinge e troca o estilo do cabelo e muda a cor da roupa.
+    //===== Changelog: ===========================================
+    //= 1.0 Script inicial.
+    //= 1.1 Reestruturado. [RoM]
+    //= 1.1a Removido strsex, show, digit [Keoy]
+    //= 1.1b Corrigida sintaxe na frase de boas-vindas do NPC [Mara]
+    //============================================================
+     
+    sec_in01,94,176,1	script	Estilista	122,{
+	
+	        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+            mes "[^008080Estilista^000000]";
+            mes "Bem vindo ^993366"+strcharinfo(0)+"^000000.";
+            mes "Que tal um visual novo?";
+            next;
+            if(select("- Estilo do Cabelo.","- Cor do Cabelo.","- Cor da Roupa.","- ^FF6600Random Style^000000.","- Sair.") == 5) close;
+            if(@menu == 1) setarray .@cor[0],1,getbattleflag ("min_hair_style"),getbattleflag ("max_hair_style");
+            if(@menu == 2) setarray .@cor[0],6,getbattleflag ("min_hair_color"),getbattleflag ("max_hair_color");
+            if(@menu == 3) setarray .@cor[0],7,getbattleflag ("min_cloth_color"),getbattleflag ("max_cloth_color");
+            if(@menu == 4) goto l_randon;
+            while(1) {
+                    if(select("- Próximo.","- Anterior.","- Digitar.","- Sair.") == 4) close;
+                    if(@menu == 1)
+                            if(getlook(.@cor[0]) >= .@cor[2]) setlook .@cor[0],.@cor[1];
+                            else setlook .@cor[0],getlook(.@cor[0])+1;
+                    if(@menu == 2)
+                            if(getlook(.@cor[0]) <= .@cor[1]) setlook .@cor[0],.@cor[2];
+                            else setlook .@cor[0],getlook(.@cor[0])-1;
+                    if(@menu == 3) {
+                            input .@num,.@cor[1],.@cor[2];
+                            setlook .@cor[0],.@num;
+                    }
+                    mes "Número: ^FF0000"+getlook(.@cor[0])+"^000000/"+.@cor[2];
+                    specialeffect2 339;    
+    }
+    l_randon:
+    mes "[^008080Estilista^000000]";
+    mes "Gostaria de randomizar seu estilo?";
+    menu "- Sim.",s,"- Não.",n;
+     
+    s:
+    next;
+    setlook 1,rand(getbattleflag ("min_hair_style"),getbattleflag ("max_hair_style"));
+    setlook 6,rand(getbattleflag ("min_hair_color"),getbattleflag ("max_hair_color"));
+    setlook 7,rand(getbattleflag ("min_cloth_color"),getbattleflag ("max_cloth_color"));
+    getlook 1;
+    getlook 6;
+    getlook 7;
+    mes "[^008080Estilista^000000]";
+    mes "Seu estilo de cabelo atual é: ^800080"+getlook(1)+"^000000.";
+    mes "Sua cor de cabelo atual é: ^800080"+getlook(6)+"^000000.";
+    mes "Sua cor de cabelo atual é: ^800080"+getlook(7)+"^000000.";
+    mes "~";
+    mes "E então, ^993366"+strcharinfo(0)+"^000000.";
+    mes "Gostou do estilo?";
+    menu "- Outro por favor.",s,"- Gostei desse.",n;
+     
+    n:
+    close;
+           
+    }
+

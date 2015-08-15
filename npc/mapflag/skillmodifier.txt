@@ -1,0 +1,19 @@
+//===== Cronus Script ======================================
+//= Mapflag: Adjust Skill Damage.
+//===== Por: ==================================================
+//= Hercules Dev Team
+//===== Versão Atual: =====================================
+//= 1.0
+//===== Descrição: =========================================
+//= This mapflag allows you to modify the damage of any skill 
+//= in any map.
+//= Example (1):
+//= prontera	mapflag	adjust_skill_damage	MG_FIREBOLT	50
+//= Halves the damage of Firebolt in Prontera.
+//=
+//= Example (2):
+//= prontera	mapflag	adjust_skill_damage	MG_FIREBOLT	200
+//= Doubles the damage of Firebolt in Prontera.
+//===== Comentários Adicionais: =================================
+//= 1.0 - Initial script.
+//============================================================

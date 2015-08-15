@@ -1,0 +1,23 @@
+//___________________________________
+// [GM] Auto Gm Commands (On Login)		
+// Feito por Johnny.					
+// v1.0 - 10/12/2013					
+//___________________________________
+
+-	script	AutoGmCommands	-1,{
+	OnInit:
+		set .gmlvl, 99; // Nível mínimo de GM para ser afetado pelos comandos.
+		end;
+	OnPCLoginEvent:
+		if(getgmlevel() >= .gmlvl) {	// Sempre que um GM logar...
+			if(!checkoption(0x40))
+				charcommand "@hide";	// Estará invisível.
+			charcommand "@speed 50";	// Estará com velocidade alta.
+			charcommand "@battleignore";// Não poderá ser atacado por jogadores e monstros.
+				mes "Olá "+StrCharInfo(0)+"!";
+				mes "Bem Vindo ADM Gostosão Tenha Fé sempre !";
+				close;
+		}
+		end;
+	end;
+}

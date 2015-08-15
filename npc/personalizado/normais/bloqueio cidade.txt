@@ -1,0 +1,50 @@
+// -- Block de Cidades
+
+//@Go 33 em baixo
+
+malangdo	mapflag	noteleport
+malangdo	mapflag	nowarpto
+malangdo	mapflag	nocommand	1
+malangdo	mapflag	nomemo
+malangdo	mapflag	nosave
+
+
+//@Go 32 em baixo
+dewata	mapflag	noteleport
+dewata	mapflag	nowarpto
+dewata	mapflag	nocommand	1
+dewata	mapflag	nomemo
+dewata	mapflag	nosave
+
+
+
+//@Go 31 em baixo
+mora	mapflag	noteleport
+mora	mapflag	nowarpto
+mora	mapflag	nocommand	1
+mora	mapflag	nomemo
+mora	mapflag	nosave
+
+
+
+//@Go 30 em baixo
+dicastes01	mapflag	noteleport
+dicastes01	mapflag	nowarpto
+dicastes01	mapflag	nocommand	1
+dicastes01	mapflag	nomemo
+dicastes01	mapflag	nosave
+
+//@Go 26 em baixo
+mid_camp	mapflag	noteleport
+mid_camp	mapflag	nowarpto
+mid_camp	mapflag	nocommand	1
+mid_camp	mapflag	nomemo
+mid_camp	mapflag	nosave
+
+//@Go 16 em baixo
+sec_pri	mapflag	noteleport
+sec_pri	mapflag	nowarpto
+sec_pri	mapflag	nocommand	1
+sec_pri	mapflag	nomemo
+sec_pri	mapflag	nosave
+

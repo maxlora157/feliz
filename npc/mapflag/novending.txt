@@ -1,0 +1,14 @@
+//===== Cronus Script ======================================
+//= Mapflag: Disable vending.
+//===== Por: ==================================================
+//= Epoque
+//===== Versão Atual: =====================================
+//= 1.0a
+//===== Descrição: =========================================
+//= Disables skill MC_VENDING on a map.
+//===== Comentários Adicionais: =================================
+//= 1.0 - Initial script.
+//============================================================
+
+//prontera	mapflag	novending
+//prt_in	mapflag	novending

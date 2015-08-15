@@ -1,0 +1,22 @@
+sec_in01,86,180,4	script	Sair da Sala VIP	803,{
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+	mes "Olá "+StrCharInfo(0)+"!";
+	mes "Deseja ir para algum dos lugares abaixo?";
+	next;
+	switch(select("Deseja voltar para prontera ?")){
+		case 1:
+			mes "Até mais!";
+			close2;
+			warp "prontera",155,183;
+			end;
+			
+							OnInit:
+waitingroom "Sair da Sala VIP", 0;
+end;
+
+	}
+}

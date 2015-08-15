@@ -1,0 +1,930 @@
+//  ________________________________________________________
+// /                                                        \
+// | Nome do Script: nobranch.txt                           |
+// |--------------------------------------------------------|
+// | Criado por: Psy CrystalRO team                         |
+// |--------------------------------------------------------|
+// | Descrição: Configuração Mapflag que desabilita uso de  |
+// |Stuff da Bg nos mapas.                                  |
+// |--------------------------------------------------------|
+// |                                                        |
+// |                                                        |
+// | - Anotações                                            |
+// | Sempre que adicionar mapa custom de cidade, quest ou   |
+// | evento, você deve completar este mapflag na Pasta      |
+// | Import ou no Script do mapa.                           |
+// \________________________________________________________/
+
+//alb_ship 1	mapflag	nobg
+alb2trea	mapflag	nobg
+alberta	mapflag	nobg
+alberta_in	mapflag	nobg
+alde_dun01	mapflag	nobg
+alde_dun02	mapflag	nobg
+alde_dun03	mapflag	nobg
+alde_dun04	mapflag	nobg
+aldeba_in	mapflag	nobg
+aldebaran	mapflag	nobg
+anthell01	mapflag	nobg
+anthell02	mapflag	nobg
+arena_room	mapflag	nobg
+c_tower1	mapflag	nobg
+c_tower2	mapflag	nobg
+c_tower3	mapflag	nobg
+c_tower4	mapflag	nobg
+force_1-1	mapflag	nobg
+force_1-2	mapflag	nobg
+force_1-3	mapflag	nobg
+force_2-1	mapflag	nobg
+force_2-2	mapflag	nobg
+force_2-3	mapflag	nobg
+force_3-1	mapflag	nobg
+force_3-2	mapflag	nobg
+force_3-3	mapflag	nobg
+gef_dun00	mapflag	nobg
+gef_dun01	mapflag	nobg
+gef_dun02	mapflag	nobg
+gef_dun03	mapflag	nobg
+gef_fild00	mapflag	nobg
+gef_fild01	mapflag	nobg
+gef_fild02	mapflag	nobg
+gef_fild03	mapflag	nobg
+gef_fild04	mapflag	nobg
+gef_fild05	mapflag	nobg
+gef_fild06	mapflag	nobg
+gef_fild07	mapflag	nobg
+gef_fild08	mapflag	nobg
+gef_fild09	mapflag	nobg
+gef_fild10	mapflag	nobg
+gef_fild11	mapflag	nobg
+gef_fild12	mapflag	nobg
+gef_fild13	mapflag	nobg
+gef_fild14	mapflag	nobg
+gef_tower	mapflag	nobg
+geffen	mapflag	nobg
+geffen_in	mapflag	nobg
+gl_cas01	mapflag	nobg
+gl_cas02	mapflag	nobg
+gl_church	mapflag	nobg
+gl_chyard	mapflag	nobg
+gl_dun01	mapflag	nobg
+gl_dun02	mapflag	nobg
+gl_in01	mapflag	nobg
+gl_knt01	mapflag	nobg
+gl_knt02	mapflag	nobg
+gl_prison	mapflag	nobg
+gl_prison1	mapflag	nobg
+gl_sew01	mapflag	nobg
+gl_sew02	mapflag	nobg
+gl_sew03	mapflag	nobg
+gl_sew04	mapflag	nobg
+gl_step	mapflag	nobg
+glast_01	mapflag	nobg
+hunter_1-1	mapflag	nobg
+hunter_2-1	mapflag	nobg
+hunter_3-1	mapflag	nobg
+in_hunter	mapflag	nobg
+in_moc_16	mapflag	nobg
+in_orcs01	mapflag	nobg
+in_sphinx1	mapflag	nobg
+in_sphinx2	mapflag	nobg
+in_sphinx3	mapflag	nobg
+in_sphinx4	mapflag	nobg
+in_sphinx5	mapflag	nobg
+iz_dun00	mapflag	nobg
+iz_dun01	mapflag	nobg
+iz_dun02	mapflag	nobg
+iz_dun03	mapflag	nobg
+iz_dun04	mapflag	nobg
+job_sword1	mapflag	nobg
+izlu2dun	mapflag	nobg
+izlude	mapflag	nobg
+izlude_in	mapflag	nobg
+job_thief1	mapflag	nobg
+knight_1-1	mapflag	nobg
+knight_2-1	mapflag	nobg
+knight_3-1	mapflag	nobg
+mjo_dun01	mapflag	nobg
+mjo_dun02	mapflag	nobg
+mjo_dun03	mapflag	nobg
+mjolnir_01	mapflag	nobg
+mjolnir_02	mapflag	nobg
+mjolnir_03	mapflag	nobg
+mjolnir_04	mapflag	nobg
+mjolnir_05	mapflag	nobg
+mjolnir_06	mapflag	nobg
+mjolnir_07	mapflag	nobg
+mjolnir_08	mapflag	nobg
+mjolnir_09	mapflag	nobg
+mjolnir_10	mapflag	nobg
+mjolnir_11	mapflag	nobg
+mjolnir_12	mapflag	nobg
+moc_castle	mapflag	nobg
+moc_fild01	mapflag	nobg
+moc_fild02	mapflag	nobg
+moc_fild03	mapflag	nobg
+moc_fild04	mapflag	nobg
+moc_fild05	mapflag	nobg
+moc_fild06	mapflag	nobg
+moc_fild07	mapflag	nobg
+moc_fild08	mapflag	nobg
+moc_fild09	mapflag	nobg
+moc_fild10	mapflag	nobg
+moc_fild11	mapflag	nobg
+moc_fild12	mapflag	nobg
+moc_fild13	mapflag	nobg
+moc_fild14	mapflag	nobg
+moc_fild15	mapflag	nobg
+moc_fild16	mapflag	nobg
+moc_fild17	mapflag	nobg
+moc_fild18	mapflag	nobg
+moc_fild19	mapflag	nobg
+moc_pryd01	mapflag	nobg
+moc_pryd02	mapflag	nobg
+moc_pryd03	mapflag	nobg
+moc_pryd04	mapflag	nobg
+moc_pryd05	mapflag	nobg
+moc_pryd06	mapflag	nobg
+moc_prydb1	mapflag	nobg
+moc_ruins	mapflag	nobg
+monk_in	mapflag	nobg
+morocc	mapflag	nobg
+morocc_in	mapflag	nobg
+new_1-1	mapflag	nobg
+new_1-2	mapflag	nobg
+new_1-3	mapflag	nobg
+new_1-4	mapflag	nobg
+new_2-1	mapflag	nobg
+new_2-2	mapflag	nobg
+new_2-3	mapflag	nobg
+new_2-4	mapflag	nobg
+new_3-1	mapflag	nobg
+new_3-2	mapflag	nobg
+new_3-3	mapflag	nobg
+new_3-4	mapflag	nobg
+new_4-1	mapflag	nobg
+new_4-2	mapflag	nobg
+new_4-3	mapflag	nobg
+new_4-4	mapflag	nobg
+new_5-1	mapflag	nobg
+new_5-2	mapflag	nobg
+new_5-3	mapflag	nobg
+new_5-4	mapflag	nobg
+orcsdun01	mapflag	nobg
+orcsdun02	mapflag	nobg
+//ordeal_1-1	mapflag	nobg
+//ordeal_1-2	mapflag	nobg
+//ordeal_1-3	mapflag	nobg
+//ordeal_1-4	mapflag	nobg
+//ordeal_2-1	mapflag	nobg
+//ordeal_2-2	mapflag	nobg
+//ordeal_2-3	mapflag	nobg
+//ordeal_2-4	mapflag	nobg
+//ordeal_3-1	mapflag	nobg
+//ordeal_3-2	mapflag	nobg
+//ordeal_3-3	mapflag	nobg
+//ordeal_3-4	mapflag	nobg
+pay_arche	mapflag	nobg
+pay_dun00	mapflag	nobg
+pay_dun01	mapflag	nobg
+pay_dun02	mapflag	nobg
+pay_dun03	mapflag	nobg
+pay_dun04	mapflag	nobg
+pay_fild01	mapflag	nobg
+pay_fild02	mapflag	nobg
+pay_fild03	mapflag	nobg
+pay_fild04	mapflag	nobg
+pay_fild05	mapflag	nobg
+pay_fild06	mapflag	nobg
+pay_fild07	mapflag	nobg
+pay_fild08	mapflag	nobg
+pay_fild09	mapflag	nobg
+pay_fild10	mapflag	nobg
+pay_fild11	mapflag	nobg
+payon	mapflag	nobg
+payon_in01	mapflag	nobg
+payon_in02	mapflag	nobg
+priest_1-1	mapflag	nobg
+priest_2-1	mapflag	nobg
+priest_3-1	mapflag	nobg
+prontera	mapflag	nobg
+prt_are_in	mapflag	nobg
+prt_are01	mapflag	nobg
+pvp_room	mapflag	nobg
+prt_castle	mapflag	nobg
+prt_church	mapflag	nobg
+prt_fild00	mapflag	nobg
+prt_fild01	mapflag	nobg
+prt_fild02	mapflag	nobg
+prt_fild03	mapflag	nobg
+prt_fild04	mapflag	nobg
+prt_fild05	mapflag	nobg
+prt_fild06	mapflag	nobg
+prt_fild07	mapflag	nobg
+prt_fild08	mapflag	nobg
+prt_fild09	mapflag	nobg
+prt_fild10	mapflag	nobg
+prt_fild11	mapflag	nobg
+prt_in	mapflag	nobg
+prt_maze01	mapflag	nobg
+prt_maze02	mapflag	nobg
+prt_maze03	mapflag	nobg
+prt_monk	mapflag	nobg
+prt_sewb1	mapflag	nobg
+prt_sewb2	mapflag	nobg
+prt_sewb3	mapflag	nobg
+prt_sewb4	mapflag	nobg
+pvp_2vs2	mapflag	nobg
+pvp_c_room	mapflag	nobg
+pvp_n_1-1	mapflag	nobg
+pvp_n_1-2	mapflag	nobg
+pvp_n_1-3	mapflag	nobg
+pvp_n_1-4	mapflag	nobg
+pvp_n_1-5	mapflag	nobg
+pvp_n_2-1	mapflag	nobg
+pvp_n_2-2	mapflag	nobg
+pvp_n_2-3	mapflag	nobg
+pvp_n_2-4	mapflag	nobg
+pvp_n_2-5	mapflag	nobg
+pvp_n_3-1	mapflag	nobg
+pvp_n_3-2	mapflag	nobg
+pvp_n_3-3	mapflag	nobg
+pvp_n_3-4	mapflag	nobg
+pvp_n_3-5	mapflag	nobg
+pvp_n_4-1	mapflag	nobg
+pvp_n_4-2	mapflag	nobg
+pvp_n_4-3	mapflag	nobg
+pvp_n_4-4	mapflag	nobg
+pvp_n_4-5	mapflag	nobg
+pvp_n_5-1	mapflag	nobg
+pvp_n_5-2	mapflag	nobg
+pvp_n_5-3	mapflag	nobg
+pvp_n_5-4	mapflag	nobg
+pvp_n_5-5	mapflag	nobg
+pvp_n_6-1	mapflag	nobg
+pvp_n_6-2	mapflag	nobg
+pvp_n_6-3	mapflag	nobg
+pvp_n_6-4	mapflag	nobg
+pvp_n_6-5	mapflag	nobg
+pvp_n_7-1	mapflag	nobg
+pvp_n_7-2	mapflag	nobg
+pvp_n_7-3	mapflag	nobg
+pvp_n_7-4	mapflag	nobg
+pvp_n_7-5	mapflag	nobg
+pvp_n_8-1	mapflag	nobg
+pvp_n_8-2	mapflag	nobg
+pvp_n_8-3	mapflag	nobg
+pvp_n_8-4	mapflag	nobg
+pvp_n_8-5	mapflag	nobg
+pvp_n_room	mapflag	nobg
+pvp_y_1-1	mapflag	nobg
+pvp_y_1-2	mapflag	nobg
+pvp_y_1-3	mapflag	nobg
+pvp_y_1-4	mapflag	nobg
+pvp_y_1-5	mapflag	nobg
+pvp_y_2-1	mapflag	nobg
+pvp_y_2-2	mapflag	nobg
+pvp_y_2-3	mapflag	nobg
+pvp_y_2-4	mapflag	nobg
+pvp_y_2-5	mapflag	nobg
+pvp_y_3-1	mapflag	nobg
+pvp_y_3-2	mapflag	nobg
+pvp_y_3-3	mapflag	nobg
+pvp_y_3-4	mapflag	nobg
+pvp_y_3-5	mapflag	nobg
+pvp_y_4-1	mapflag	nobg
+pvp_y_4-2	mapflag	nobg
+pvp_y_4-3	mapflag	nobg
+pvp_y_4-4	mapflag	nobg
+pvp_y_4-5	mapflag	nobg
+pvp_y_5-1	mapflag	nobg
+pvp_y_5-2	mapflag	nobg
+pvp_y_5-3	mapflag	nobg
+pvp_y_5-4	mapflag	nobg
+pvp_y_5-5	mapflag	nobg
+pvp_y_6-1	mapflag	nobg
+pvp_y_6-2	mapflag	nobg
+pvp_y_6-3	mapflag	nobg
+pvp_y_6-4	mapflag	nobg
+pvp_y_6-5	mapflag	nobg
+pvp_y_7-1	mapflag	nobg
+pvp_y_7-2	mapflag	nobg
+pvp_y_7-3	mapflag	nobg
+pvp_y_7-4	mapflag	nobg
+pvp_y_7-5	mapflag	nobg
+pvp_y_8-1	mapflag	nobg
+pvp_y_8-2	mapflag	nobg
+pvp_y_8-3	mapflag	nobg
+pvp_y_8-4	mapflag	nobg
+pvp_y_8-5	mapflag	nobg
+pvp_y_room	mapflag	nobg
+sword_1-1	mapflag	nobg
+sword_2-1	mapflag	nobg
+sword_3-1	mapflag	nobg
+treasure01	mapflag	nobg
+treasure02	mapflag	nobg
+wizard_1-1	mapflag	nobg
+wizard_2-1	mapflag	nobg
+wizard_3-1	mapflag	nobg
+xmas	mapflag	nobg
+xmas_dun01	mapflag	nobg
+xmas_dun02	mapflag	nobg
+xmas_fild01	mapflag	nobg
+xmas_in	mapflag	nobg
+beach_dun	mapflag	nobg
+beach_dun2	mapflag	nobg
+beach_dun3	mapflag	nobg
+cmd_fild01	mapflag	nobg
+cmd_fild02	mapflag	nobg
+cmd_fild03	mapflag	nobg
+cmd_fild04	mapflag	nobg
+cmd_fild05	mapflag	nobg
+cmd_fild06	mapflag	nobg
+cmd_fild07	mapflag	nobg
+cmd_fild08	mapflag	nobg
+cmd_fild09	mapflag	nobg
+cmd_in01	mapflag	nobg
+cmd_in02	mapflag	nobg
+comodo	mapflag	nobg
+quiz_00	mapflag	nobg
+quiz_01	mapflag	nobg
+g_room1-1	mapflag	nobg
+g_room1-2	mapflag	nobg
+g_room1-3	mapflag	nobg
+g_room2	mapflag	nobg
+tur_dun01	mapflag	nobg
+tur_dun02	mapflag	nobg
+tur_dun03	mapflag	nobg
+tur_dun04	mapflag	nobg
+tur_dun05	mapflag	nobg
+tur_dun06	mapflag	nobg
+alde_gld	mapflag	nobg
+aldeg_cas01	mapflag	nobg
+aldeg_cas02	mapflag	nobg
+aldeg_cas03	mapflag	nobg
+aldeg_cas04	mapflag	nobg
+aldeg_cas05	mapflag	nobg
+gefg_cas01	mapflag	nobg
+gefg_cas02	mapflag	nobg
+gefg_cas03	mapflag	nobg
+gefg_cas04	mapflag	nobg
+gefg_cas05	mapflag	nobg
+gld_dun01	mapflag	nobg
+gld_dun02	mapflag	nobg
+gld_dun03	mapflag	nobg
+gld_dun04	mapflag	nobg
+guild_room	mapflag	nobg
+guild_vs1	mapflag	nobg
+guild_vs2	mapflag	nobg
+guild_vs3	mapflag	nobg
+guild_vs4	mapflag	nobg
+guild_vs5	mapflag	nobg
+guild_vs1-1	mapflag	nobg
+guild_vs1-2	mapflag	nobg
+guild_vs1-3	mapflag	nobg
+guild_vs1-4	mapflag	nobg
+guild_vs2-1	mapflag	nobg
+guild_vs2-2	mapflag	nobg
+job_hunte	mapflag	nobg
+job_knt	mapflag	nobg
+job_prist	mapflag	nobg
+job_wiz	mapflag	nobg
+pay_gld	mapflag	nobg
+payg_cas01	mapflag	nobg
+payg_cas02	mapflag	nobg
+payg_cas03	mapflag	nobg
+payg_cas04	mapflag	nobg
+payg_cas05	mapflag	nobg
+prt_gld	mapflag	nobg
+prtg_cas01	mapflag	nobg
+prtg_cas02	mapflag	nobg
+prtg_cas03	mapflag	nobg
+prtg_cas04	mapflag	nobg
+prtg_cas05	mapflag	nobg
+alde_alche	mapflag	nobg
+in_rogue	mapflag	nobg
+job_cru	mapflag	nobg
+job_duncer	mapflag	nobg
+job_monk	mapflag	nobg
+job_sage	mapflag	nobg
+mag_dun01	mapflag	nobg
+mag_dun02	mapflag	nobg
+monk_test	mapflag	nobg
+quiz_test	mapflag	nobg
+yuno	mapflag	nobg
+yuno_fild01	mapflag	nobg
+yuno_fild02	mapflag	nobg
+yuno_fild03	mapflag	nobg
+yuno_fild04	mapflag	nobg
+yuno_in01	mapflag	nobg
+yuno_in02	mapflag	nobg
+yuno_in03	mapflag	nobg
+yuno_in04	mapflag	nobg
+yuno_in05	mapflag	nobg
+ama_dun01	mapflag	nobg
+ama_dun02	mapflag	nobg
+ama_dun03	mapflag	nobg
+ama_fild01	mapflag	nobg
+ama_in01	mapflag	nobg
+ama_in02	mapflag	nobg
+ama_test	mapflag	nobg
+amatsu	mapflag	nobg
+gon_dun01	mapflag	nobg
+gon_dun02	mapflag	nobg
+gon_dun03	mapflag	nobg
+gon_fild01	mapflag	nobg
+gon_in	mapflag	nobg
+gon_test	mapflag	nobg
+gonryun	mapflag	nobg
+sec_in01	mapflag	nobg
+sec_in02	mapflag	nobg
+sec_pri	mapflag	nobg
+umbala	mapflag	nobg
+um_dun01	mapflag	nobg
+um_dun02	mapflag	nobg
+um_fild01	mapflag	nobg
+um_fild02	mapflag	nobg
+um_fild03	mapflag	nobg
+um_fild04	mapflag	nobg
+um_in	mapflag	nobg
+niflheim	mapflag	nobg
+nif_fild01	mapflag	nobg
+nif_fild02	mapflag	nobg
+nif_in	mapflag	nobg
+yggdrasil01	mapflag	nobg
+valkyrie	mapflag	nobg
+himinn	mapflag	nobg
+lou_in01	mapflag	nobg
+lou_in02	mapflag	nobg
+lou_dun03	mapflag	nobg
+lou_dun02	mapflag	nobg
+lou_dun01	mapflag	nobg
+lou_fild01	mapflag	nobg
+louyang	mapflag	nobg
+siege_test	mapflag	nobg
+n_castle	mapflag	nobg
+nguild_gef	mapflag	nobg
+nguild_prt	mapflag	nobg
+nguild_pay	mapflag	nobg
+nguild_alde	mapflag	nobg
+jawaii	mapflag	nobg
+jawaii_in	mapflag	nobg
+gefenia01	mapflag	nobg
+gefenia02	mapflag	nobg
+gefenia03	mapflag	nobg
+gefenia04	mapflag	nobg
+new_zone01	mapflag	nobg
+new_zone02	mapflag	nobg
+new_zone03	mapflag	nobg
+new_zone04	mapflag	nobg
+payon_in03	mapflag	nobg
+ayothaya	mapflag	nobg
+ayo_in01	mapflag	nobg
+ayo_in02	mapflag	nobg
+ayo_fild01	mapflag	nobg
+ayo_fild02	mapflag	nobg
+ayo_dun01	mapflag	nobg
+ayo_dun02	mapflag	nobg
+que_god01	mapflag	nobg
+que_god02	mapflag	nobg
+yuno_fild05	mapflag	nobg
+yuno_fild07	mapflag	nobg
+yuno_fild08	mapflag	nobg
+yuno_fild09	mapflag	nobg
+yuno_fild11	mapflag	nobg
+yuno_fild12	mapflag	nobg
+alde_tt02	mapflag	nobg
+turbo_n_1	mapflag	nobg
+turbo_n_4	mapflag	nobg
+turbo_n_8	mapflag	nobg
+turbo_n_16	mapflag	nobg
+turbo_e_4	mapflag	nobg
+turbo_e_8	mapflag	nobg
+turbo_e_16	mapflag	nobg
+turbo_room	mapflag	nobg
+airplane	mapflag	nobg
+airport	mapflag	nobg
+einbech	mapflag	nobg
+einbroch	mapflag	nobg
+ein_dun01	mapflag	nobg
+ein_dun02	mapflag	nobg
+ein_fild06	mapflag	nobg
+ein_fild07	mapflag	nobg
+ein_fild08	mapflag	nobg
+ein_fild09	mapflag	nobg
+ein_fild10	mapflag	nobg
+ein_in01	mapflag	nobg
+que_sign01	mapflag	nobg
+que_sign02	mapflag	nobg
+ein_fild03	mapflag	nobg
+ein_fild04	mapflag	nobg
+lhz_fild02	mapflag	nobg
+lhz_fild03	mapflag	nobg
+yuno_pre	mapflag	nobg
+lhz_fild01	mapflag	nobg
+lighthalzen	mapflag	nobg
+lhz_in01	mapflag	nobg
+lhz_in02	mapflag	nobg
+lhz_in03	mapflag	nobg
+lhz_que01	mapflag	nobg
+lhz_dun01	mapflag	nobg
+lhz_dun02	mapflag	nobg
+lhz_dun03	mapflag	nobg
+lhz_cube	mapflag	nobg
+juperos_01	mapflag	nobg
+juperos_02	mapflag	nobg
+jupe_area1	mapflag	nobg
+jupe_area2	mapflag	nobg
+jupe_core	mapflag	nobg
+jupe_ele	mapflag	nobg
+jupe_ele_r	mapflag	nobg
+jupe_gate	mapflag	nobg
+y_airport	mapflag	nobg
+lhz_airport	mapflag	nobg
+airplane_01	mapflag	nobg
+jupe_cave	mapflag	nobg
+quiz_02	mapflag	nobg
+hu_fild07	mapflag	nobg
+hu_fild05	mapflag	nobg
+hu_fild04	mapflag	nobg
+hu_fild01	mapflag	nobg
+yuno_fild06	mapflag	nobg
+job_soul	mapflag	nobg
+job_star	mapflag	nobg
+que_job01	mapflag	nobg
+que_job02	mapflag	nobg
+que_job03	mapflag	nobg
+abyss_01	mapflag	nobg
+abyss_02	mapflag	nobg
+abyss_03	mapflag	nobg
+thana_step	mapflag	nobg
+thana_boss	mapflag	nobg
+tha_scene01	mapflag	nobg
+tha_t01	mapflag	nobg
+tha_t02	mapflag	nobg
+tha_t03	mapflag	nobg
+tha_t04	mapflag	nobg
+tha_t07	mapflag	nobg
+tha_t05	mapflag	nobg
+tha_t06	mapflag	nobg
+tha_t08	mapflag	nobg
+tha_t09	mapflag	nobg
+tha_t10	mapflag	nobg
+tha_t11	mapflag	nobg
+tha_t12	mapflag	nobg
+auction_01	mapflag	nobg
+auction_02	mapflag	nobg
+hugel	mapflag	nobg
+hu_in01	mapflag	nobg
+que_bingo	mapflag	nobg
+que_hugel	mapflag	nobg
+p_track01	mapflag	nobg
+p_track02	mapflag	nobg
+odin_tem01	mapflag	nobg
+odin_tem02	mapflag	nobg
+odin_tem03	mapflag	nobg
+hu_fild02	mapflag	nobg
+hu_fild03	mapflag	nobg
+hu_fild06	mapflag	nobg
+ein_fild01	mapflag	nobg
+ein_fild02	mapflag	nobg
+ein_fild05	mapflag	nobg
+yuno_fild10	mapflag	nobg
+kh_kiehl02	mapflag	nobg
+kh_kiehl01	mapflag	nobg
+kh_dun02	mapflag	nobg
+kh_dun01	mapflag	nobg
+kh_mansion	mapflag	nobg
+kh_rossi	mapflag	nobg
+kh_school	mapflag	nobg
+kh_vila	mapflag	nobg
+force_map1	mapflag	nobg
+force_map2	mapflag	nobg
+force_map3	mapflag	nobg
+job_hunter	mapflag	nobg
+job_knight	mapflag	nobg
+job_priest	mapflag	nobg
+job_wizard	mapflag	nobg
+ve_in02	mapflag	nobg
+rachel	mapflag	nobg
+ra_in01	mapflag	nobg
+ra_fild01	mapflag	nobg
+ra_fild02	mapflag	nobg
+ra_fild03	mapflag	nobg
+ra_fild04	mapflag	nobg
+ra_fild05	mapflag	nobg
+ra_fild06	mapflag	nobg
+ra_fild07	mapflag	nobg
+ra_fild08	mapflag	nobg
+ra_fild09	mapflag	nobg
+ra_fild10	mapflag	nobg
+ra_fild11	mapflag	nobg
+ra_fild12	mapflag	nobg
+ra_fild13	mapflag	nobg
+ra_san01	mapflag	nobg
+ra_san02	mapflag	nobg
+ra_san03	mapflag	nobg
+ra_san04	mapflag	nobg
+ra_san05	mapflag	nobg
+ra_temin	mapflag	nobg
+ra_temple	mapflag	nobg
+ra_temsky	mapflag	nobg
+que_rachel	mapflag	nobg
+ice_dun01	mapflag	nobg
+ice_dun02	mapflag	nobg
+ice_dun03	mapflag	nobg
+ice_dun04	mapflag	nobg
+que_thor	mapflag	nobg
+thor_camp	mapflag	nobg
+thor_v01	mapflag	nobg
+thor_v02	mapflag	nobg
+thor_v03	mapflag	nobg
+veins	mapflag	nobg
+ve_in	mapflag	nobg
+ve_fild01	mapflag	nobg
+ve_fild02	mapflag	nobg
+ve_fild03	mapflag	nobg
+ve_fild04	mapflag	nobg
+ve_fild05	mapflag	nobg
+ve_fild06	mapflag	nobg
+ve_fild07	mapflag	nobg
+poring_c01	mapflag	nobg
+poring_c02	mapflag	nobg
+que_ng	mapflag	nobg
+nameless_i	mapflag	nobg
+nameless_n	mapflag	nobg
+nameless_in	mapflag	nobg
+abbey01	mapflag	nobg
+abbey02	mapflag	nobg
+abbey03	mapflag	nobg
+poring_w01	mapflag	nobg
+poring_w02	mapflag	nobg
+que_san04	mapflag	nobg
+moscovia	mapflag	nobg
+mosk_in	mapflag	nobg
+mosk_ship	mapflag	nobg
+mosk_fild01	mapflag	nobg
+mosk_fild02	mapflag	nobg
+mosk_dun01	mapflag	nobg
+mosk_dun02	mapflag	nobg
+mosk_dun03	mapflag	nobg
+mosk_que	mapflag	nobg
+force_4-1	mapflag	nobg
+force_5-1	mapflag	nobg
+06guild_r	mapflag	nobg
+06guild_01	mapflag	nobg
+06guild_02	mapflag	nobg
+06guild_03	mapflag	nobg
+06guild_04	mapflag	nobg
+06guild_05	mapflag	nobg
+06guild_06	mapflag	nobg
+06guild_07	mapflag	nobg
+06guild_08	mapflag	nobg
+z_agit	mapflag	nobg
+que_temsky	mapflag	nobg
+itemmall	mapflag	nobg
+bossnia_01	mapflag	nobg
+bossnia_02	mapflag	nobg
+bossnia_03	mapflag	nobg
+bossnia_04	mapflag	nobg
+schg_cas01	mapflag	nobg
+schg_cas02	mapflag	nobg
+schg_cas03	mapflag	nobg
+schg_cas04	mapflag	nobg
+schg_cas05	mapflag	nobg
+sch_gld	mapflag	nobg
+cave	mapflag	nobg
+moc_fild20	mapflag	nobg
+moc_fild21	mapflag	nobg
+moc_fild22	mapflag	nobg
+que_ba	mapflag	nobg
+que_moc_16	mapflag	nobg
+que_moon	mapflag	nobg
+arug_cas01	mapflag	nobg
+arug_cas02	mapflag	nobg
+arug_cas03	mapflag	nobg
+arug_cas04	mapflag	nobg
+arug_cas05	mapflag	nobg
+aru_gld	mapflag	nobg
+bat_room	mapflag	nobg
+//bat_a01	mapflag	nobg
+//bat_a02	mapflag	nobg
+//bat_b01	mapflag	nobg
+//bat_b02	mapflag	nobg
+que_qsch01	mapflag	nobg
+que_qsch02	mapflag	nobg
+que_qsch03	mapflag	nobg
+que_qsch04	mapflag	nobg
+que_qsch05	mapflag	nobg
+que_qaru01	mapflag	nobg
+que_qaru02	mapflag	nobg
+que_qaru03	mapflag	nobg
+que_qaru04	mapflag	nobg
+que_qaru05	mapflag	nobg
+1@cata	mapflag	nobg
+2@cata	mapflag	nobg
+e_tower	mapflag	nobg
+1@tower	mapflag	nobg
+2@tower	mapflag	nobg
+3@tower	mapflag	nobg
+4@tower	mapflag	nobg
+5@tower	mapflag	nobg
+6@tower	mapflag	nobg
+mid_camp	mapflag	nobg
+mid_campin	mapflag	nobg
+man_fild01	mapflag	nobg
+man_fild03	mapflag	nobg
+spl_fild02	mapflag	nobg
+spl_fild03	mapflag	nobg
+moc_fild22b	mapflag	nobg
+que_dan01	mapflag	nobg
+que_dan02	mapflag	nobg
+schg_que01	mapflag	nobg
+schg_dun01	mapflag	nobg
+arug_que01	mapflag	nobg
+arug_dun01	mapflag	nobg
+1@orcs	mapflag	nobg
+2@orcs	mapflag	nobg
+1@nyd	mapflag	nobg
+2@nyd	mapflag	nobg
+nyd_dun01	mapflag	nobg
+nyd_dun02	mapflag	nobg
+manuk	mapflag	nobg
+man_fild02	mapflag	nobg
+man_in01	mapflag	nobg
+splendide	mapflag	nobg
+spl_fild01	mapflag	nobg
+spl_in01	mapflag	nobg
+spl_in02	mapflag	nobg
+//bat_c01	mapflag	nobg
+//bat_c02	mapflag	nobg
+//bat_c03	mapflag	nobg
+moc_para01	mapflag	nobg
+job3_arch01	mapflag	nobg
+job3_arch02	mapflag	nobg
+job3_arch03	mapflag	nobg
+job3_guil01	mapflag	nobg
+job3_guil02	mapflag	nobg
+job3_guil03	mapflag	nobg
+job3_rang01	mapflag	nobg
+job3_rang02	mapflag	nobg
+job3_rune01	mapflag	nobg
+job3_rune02	mapflag	nobg
+job3_rune03	mapflag	nobg
+job3_war01	mapflag	nobg
+job3_war02	mapflag	nobg
+jupe_core2	mapflag	nobg
+brasilis	mapflag	nobg
+bra_in01	mapflag	nobg
+bra_fild01	mapflag	nobg
+bra_dun01	mapflag	nobg
+bra_dun02	mapflag	nobg
+dicastes01	mapflag	nobg
+dicastes02	mapflag	nobg
+dic_in01	mapflag	nobg
+dic_fild01	mapflag	nobg
+dic_fild02	mapflag	nobg
+dic_dun01	mapflag	nobg
+dic_dun02	mapflag	nobg
+job3_gen01	mapflag	nobg
+s_atelier	mapflag	nobg
+job3_sha01	mapflag	nobg
+//
+//============================================================
+// Mapas de Eventos
+//============================================================
+//evt_zombie
+//evt_coke
+//ac_sl_area
+//ac_cl_hall
+//ac_cl_room
+//jp_s_dun11
+//
+//============================================================
+// Em testes
+//============================================================
+mora	mapflag	nobg
+bif_fild01	mapflag	nobg
+bif_fild02	mapflag	nobg
+1@mist	mapflag	nobg
+dewata	mapflag	nobg
+dew_in01	mapflag	nobg
+dew_fild01	mapflag	nobg
+dew_dun01	mapflag	nobg
+dew_dun02	mapflag	nobg
+que_house_s	mapflag	nobg
+malangdo	mapflag	nobg
+mal_in01	mapflag	nobg
+mal_in02	mapflag	nobg
+mal_dun01	mapflag	nobg
+1@pump	mapflag	nobg
+2@pump	mapflag	nobg
+1@cash	mapflag	nobg
+iz_dun05	mapflag	nobg
+evt_mobroom	mapflag	nobg
+alde_tt03	mapflag	nobg
+dic_dun03	mapflag	nobg
+//mjolnir_04_1	mapflag	nobg
+//evt_swar_b	mapflag	nobg
+//evt_swar_r	mapflag	nobg
+//evt_swar_s
+//evt_swar_t
+1@lhz	mapflag	nobg
+lhz_dun04	mapflag	nobg
+que_lhz	mapflag	nobg
+//
+// Somente adicione mapas abaixo desta linha se eles não forem mapas PADRÃO!
+//
+//======================================================================================
+// Outros / Mapas Extras
+//======================================================================================
+//rwc01	1000
+//rwc02
+//rwc03
+//2009rwc_f01
+//2009rwc_01
+//2009rwc_02
+//2009rwc_03
+//2009rwc_04
+//2008rwc_04
+//prontera_x
+//alberta_x
+//aldebaran_x
+//geffen_x
+//izlude_x
+//prt_church_x
+//prontera_s
+//pay_arche_s
+//xmas_old
+//ordeal_a00
+//ordeal_a02
+//fay_vilg00
+//fay_vilg01
+//gef_vilg00
+//gef_vilg01
+//moc_dugn01
+//moc_dugn02
+//moc_fild01
+//moc_fild02
+//moc_fild03
+//moc_fild04
+//moc_intr00
+//moc_intr01
+//moc_intr02
+//moc_intr04
+//moc_vilg00
+//moc_vilg01
+//moc_vilg02
+//probemap
+//probemap02
+//prt_cstl01
+//prt_dugn00
+//prt_dugn01
+//prt_fild00
+//prt_fild01
+//prt_fild03
+//prt_fild04
+//prt_fild05
+//prt_intr01
+//prt_intr01_a
+//prt_intr02
+//prt_vilg00
+//prt_vilg01
+//prt_vilg02
+//tank_test
+//tank_test2
+//test
+//======================================================================================
+// Coloque seus custom MAPAS aqui começando com um ID para eles.
+//======================================================================================
+//Exemplo:
+//
+//mymap	1250
+//mymap-2
+//============================= Custom Maps =============================
+//coliseum	mapflag	nobg
+//crystilia	mapflag	nobg
+//fireflies	mapflag	nobg
+//old_morroc	mapflag	nobg
+//xmas_event	mapflag	nobg
+//nif_mvp	mapflag	nobg
+//force_event	mapflag	nobg
+//cultive	mapflag	nobg
+//lucky_event	mapflag	nobg
+//ball2	mapflag	nobg
+//ars_fild08	mapflag	nobg
+
+// --- Bomberman
+//bomberman	mapflag	nobg
+
+// --- Ponto de Clã
+//guild_01	mapflag	nobg
+//guild_02	mapflag	nobg
+
+// --- Xadrez
+//chess01	mapflag	nobg
+
+// --- Championship
+//champion01	mapflag	nobg
+//champion02	mapflag	nobg
+//champion03	mapflag	nobg

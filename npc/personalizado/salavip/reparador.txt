@@ -1,0 +1,14 @@
+sec_in01,78,160,6	script	Reparador		869,{
+
+        if( getgmlevel() < 1 ) {
+                mes "["+strnpcinfo(0)+"]";
+                mes "Voce nao e VIP, apenas usuarios VIP podem utilizar esse beneficio.";
+                close;
+        }
+
+OnTouch:
+
+emotion 51;
+atcommand "@repairall";
+
+}

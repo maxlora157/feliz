@@ -1,0 +1,87 @@
+//===== Cronus Script ======================================
+//= Coin Merchants
+//===== Por: ==================================================
+//= rAthena Dev Team
+//===== Versão Atual: =====================================
+//= 1.2
+//===== Descrição: =========================================
+//= [Official Conversion]
+//= Coin redemption NPCs.
+//===== Comentários Adicionais: =================================
+//= 1.0 First version 
+//= 1.1 Fixed checkweight. [Gepard]
+//= 1.2 Optimized and merged into one file. [Euphy]
+//============================================================
+
+// Manuk & Splendide
+//============================================================
+-	script	::merchant_13_2	-1,{
+	set .@n$, "["+strnpcinfo(1)+"]";
+	mes .@n$;
+	if (isequipped(2782) && ep13_2_rhea == 100) {
+		if (!checkweight(1201,1)) {
+			mes "Parece que você está carregando muitas coisas."; 
+			mes "Por que não colocar alguns de seus itens no armazenamento e voltar?";
+			close;
+		}
+		mes "Olá.";
+		mes "O que você está procurando?";
+		next;
+		if (strnpcinfo(1) == "Merchant of Manuk") {
+			setarray .@Items[2],12342,12343,12348;
+			set .@Book,11019; //Manuk_Selling_Item
+			set .@Coin,6080; //Manuk_Coin
+			set .@i, select("Ver Descrição de item:Oportunidade de Manuk:Coragem de Manuk:Fé de Manuk:Cancelar");
+		}
+		else {
+			setarray .@Items[2],12344,12345,12349;
+			set .@Book,11018; //Splendide_Selling_Item
+			set .@Coin,6081; //Splendide_Coin
+			set .@i, select("Ver Descrição de item:Compre a Pinguicula Fruit Jam:Comprar Mel Jam de Luciola:Comprar Lágrimas Cornus:Não fazer nada");
+		}
+		mes .@n$;
+		if (.@i == 1) {
+			mes "Aqui estão as descrições dos itens.";
+			close2;
+			readbook .@Book,1;
+			end;
+		}
+		else if (.@i < 5) {
+			mes "Eu posso vender-lhe 3 "+getitemname(.@Items[.@i])+" por ^3131FF1 moeda^000000.";
+			next;
+			switch(select("Comprar:Não Comprar")) {
+			case 1:
+				if (countitem(.@Coin)) {
+					mes .@n$;
+					mes "Obrigado por terem vindo.";
+					delitem .@Coin,1; 
+					getitem .@Items[.@i],3;
+					close;
+				}
+				else {
+					mes .@n$;
+					mes "Você não tem moedas suficientes.";
+					close;
+				}
+			case 2:
+				mes .@n$;
+				break;
+			}
+		}
+		mes "Venha novamente, se você mudar de idéia.";
+		close;
+	}
+	else {
+		if (strnpcinfo(1) == "Merchant of Manuk") {
+			mes "Rtt od d";
+			mes "Qwo hd is d irr";
+		}
+		else {
+			mes "BurWehAla";
+			mes "tasnarAndu Ie Ru";
+		}
+		close;
+	}
+}
+man_in01,286,16,1	duplicate(merchant_13_2)	Merchant of Manuk	4_MAN_PIOM
+spl_in01,110,326,5	duplicate(merchant_13_2)	Merchant of Splendide	4_F_FAIRYKID4

@@ -1,0 +1,35 @@
+//===== Cronus Script ===========================================
+//= NPCs do Aeroporto de Rachel
+//===== Por: ====================================================
+//= Hercules Dev Team
+//===== Descrição: ==============================================
+//= NPCs do Aeroporto de Rachel
+//===== Comentários Adicionais: =================================
+//= Official NPCs.
+//= Traduzido para pt-BR. [Evanio]
+//===============================================================
+
+ra_fild12,295,208,0	script	toairplane#rachel	WARPNPC,1,1,{
+	end;
+OnTouch:
+	mes "Para usar o dirigível, é necessário pagar 1.200 zeny ou um Bilhete para Aeroplano.";
+	mes "Gostaria de usar o serviço?";
+	next;
+	if (select("Sim:Não") == 1) {
+		if (countitem(7311) > 0) {
+			delitem 7311,1; //Bilhete para Aeroplano
+			warp "airplane_01",245,60;
+			end;
+		}
+		if (Zeny >= 1200) {
+			set Zeny, Zeny - 1200;
+			warp "airplane_01",245,60;
+			end;
+		}
+		mes "Sinto muito, mas você não tem dinheiro suficiente.";
+		mes "Lembre-se, é necessário pagar 1.200 zeny para usar o serviço.";
+		close;
+	}
+	mes "Obrigado, volte sempre.";
+	close;
+}

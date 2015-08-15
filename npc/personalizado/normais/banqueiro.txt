@@ -1,0 +1,86 @@
+// SmartBanker v1.0b - por Rafael Perrella
+// Armazena até 2.147.483.647.999.999.999z
+// ========================================
+prontera,130,215,4	script	Banqueiro	110,{
+	set .@maxZeny, 1000000000;	// Limite de zenys no servidor (padrão: 1000000000)
+	set .@maxTrans, .@maxZeny;	// Valor máximo de depósito/saque (padrão: mesmo do Zeny)
+
+	mes "[^FF0000Banqueiro^000000]";
+	mes "Olá ^FF8000"+ strcharinfo (0) +"^000000!";
+	mes "O que deseja?";
+	next;
+	if (select ("- Ver Meu saldo", "- Realizar um depósito.", "- Realizar um saque.", "Nada... falei com você por engano.") == 4) close;
+	mes "[^FF0000Banqueiro^000000]";
+	mes "Seu saldo é de "+ (#BANK_BValue ? #BANK_BValue + callfunc ("addZero", #BANK_UValue, 9) : #BANK_UValue) +"z!";
+	if (@menu == 1) close;
+	mes "O valor máximo de saques e depósitos é de "+ .@maxTrans +"z!";
+	mes "Quanto pretende "+ ((@menu == 2) ? "depositar" : "sacar") +"?";
+	input .@n, 0, .@maxTrans;
+	if (callfunc ((@menu == 2) ? "deposit" : "withdraw", .@n, .@maxTrans, 1, .@maxZeny) == 2)
+		mes "Você não tem tantos zenys!";
+	else
+		mes "A transação ocorreu com sucesso!";
+	close;
+}
+
+function	script	deposit	{
+	set .@value, getarg (0);
+	set .@limit, getarg (1, 1000000000);
+	set .@depOnReachLim, getarg (2, 1);
+
+	if (.@value > .@limit) {
+		if (! .@depOnReachLim)
+			return 1;
+		set .@value, .@limit;
+	}
+	if (Zeny < .@value)
+		return 2;
+
+
+	set #BANK_UValue, #BANK_UValue + (.@value % 1000000000);
+	set #BANK_BValue, #BANK_BValue + (.@value - (.@value % 1000000000)) / 1000000000 + (#BANK_UValue - (#BANK_UValue % 1000000000)) / 1000000000;
+	set #BANK_UValue, #BANK_UValue % 1000000000;
+
+	set Zeny, Zeny - .@value;
+	return 0;
+}
+
+function	script	withdraw	{
+	set .@value, getarg (0);
+	set .@limit, getarg (1, 1000000000);
+	set .@wdOnReachLim, getarg (2, 1);
+	set .@maxZeny, getarg (3, 1000000000); //signed int 32bits = max 2147483647
+
+	if (.@value > .@limit) {
+		if (! .@wdOnReachLim)
+			return 1;
+		set .@value, .@limit;
+	}
+
+	if (.@maxZeny - Zeny < .@value) {
+		if (! .@wdOnReachLim)
+			return 3;
+		set .@value, .@maxZeny - Zeny;
+	}
+
+	set .@billions, (.@value - (.@value % 1000000000)) / 1000000000;
+	set .@un, .@value % 1000000000;
+	if ((#BANK_BValue < .@billions || #BANK_UValue < .@un) && #BANK_BValue < .@billions +1)
+		return 2;
+
+	set #BANK_BValue, #BANK_BValue - .@billions;
+	if (#BANK_UValue < .@un) {
+		set #BANK_UValue, #BANK_UValue + 1000000000;
+		set #BANK_BValue, #BANK_BValue -1;
+	}
+	set #BANK_UValue, #BANK_UValue - .@un;
+	set Zeny, Zeny + .@value;
+	return 0;
+}
+
+function	script	addZero	{
+	set .@temp$, getarg (0);
+	for (set .@i, getarg (1) - getstrlen (.@temp$); .@i; set .@i, .@i -1)
+		set .@temp$, "0" + .@temp$;
+	return .@temp$;
+}

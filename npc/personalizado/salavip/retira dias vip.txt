@@ -1,0 +1,6 @@
+-	script	Retira VIP	-1,{
+OnClock0000:
+	query_sql "UPDATE `login` SET `diasvip`=`diasvip`-1 WHERE `group_id`>='1'";
+	query_sql "UPDATE `login` SET `group_id`='0' WHERE `diasvip`<='0' AND `group_id`=='1'";
+	end;
+}

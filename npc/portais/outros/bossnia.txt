@@ -1,0 +1,16 @@
+//===== Cronus Script ======================================
+//= Bossnia Warps
+//===== Por: ==================================================
+//= Masao
+//===== Versão Atual: =====================================
+//= 1.0
+//===== Descrição: =========================================
+//= Back Warp Points related to the Bossnia event.
+//===== Comentários Adicionais: =================================
+//= 1.0 First Version.
+//============================================================
+
+bossnia_01,204,204,0	warp	bossnia01	1,1,prontera,155,180
+bossnia_02,204,204,0	warp	bossnia02	1,1,prontera,155,180
+bossnia_03,204,204,0	warp	bossnia03	1,1,prontera,155,180
+bossnia_04,204,204,0	warp	bossnia04	1,1,prontera,155,180

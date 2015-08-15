@@ -1,0 +1,17 @@
+//===== Cronus Script ======================================
+//= Mapflag: Disable MVP Tomb.
+//===== Por: ==================================================
+//= Hercules Dev Team
+//===== Versão Atual: =====================================
+//= 1.0
+//===== Descrição: =========================================
+//= Disables MVP tomb on some maps.
+//===== Comentários Adicionais: =================================
+//= 1.0 - Added Bossnia maps. [CairoLee]
+//============================================================
+
+// Bossnia =====
+bossnia_01	mapflag	notomb
+bossnia_02	mapflag	notomb
+bossnia_03	mapflag	notomb
+bossnia_04	mapflag	notomb
